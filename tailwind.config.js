@@ -2,6 +2,11 @@
 export default {
   content: ['./src/**/*.{html,js,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      poppins: "'Poppins', sans-serif",
+      yujiMai: "'Yuji Mai', serif",
+      playwrite: "'Playwrite HU', cursive",
+    },
     extend: {
       colors: {
         'faded-pearl': '#E6DFAF',
