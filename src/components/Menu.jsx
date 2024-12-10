@@ -7,7 +7,7 @@ const Menu = ({ filteredItems = [] }) => {
 
   return (
     <Fade cascade damping={0.3}>
-      <ul className='lg:flex lg:justify-end lg:items-center lg:gap-3 lg:text-lg space-y-4 lg:space-y-0 font-yujiMai'>
+      <ul className='lg:flex lg:justify-end lg:items-center lg:space-x-6 xl:space-x-12 lg:text-lg space-y-4 lg:space-y-0 font-yujiMai'>
        
         {filteredItems.map(({ to, label }) => (
           <li key={to}>
@@ -15,8 +15,8 @@ const Menu = ({ filteredItems = [] }) => {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? ' text-green-lantern border-2 rounded-lg border-deep-ocean px-3 py-2 text-xl lg:text-2xl'
-                  : 'px-3 hover:border-b-2 hover:rounded-xl border-green-lantern text-deep-ocean hover:transition text-lg lg:text-xl font-'
+                  ? ' text-green-lantern border-b-2 rounded-lg border-deep-ocean px-3 py-2 text-lg lg:text-xl font-semibold'
+                  : 'px-1 hover:border-b-2  border-green-lantern text-deep-ocean hover:transition lg:text-lg hover:font-semibold '
               }
             >
               {label}

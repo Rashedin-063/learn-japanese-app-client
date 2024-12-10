@@ -19,17 +19,16 @@ const Navbar = () => {
   const items = [
     { to: '/lessons', label: 'Lessons' },
     { to: '/tutorials', label: 'Tutorials' },
+    { to: '/courses', label: 'Courses' },
     { to: '/dashboard', label: 'Dashboard' },
 
   ];
 
-  const filteredItems =
-    userData?.role === 'admin'
-      ? items
-      : items.filter(
-          (item) =>
-            item.to !== '/dashboard' 
-        );
+    const filteredItems =
+      userData?.role === 'admin'
+        ? items
+        : items.filter((item) => item.to !== '/dashboard');
+
 
   // console.log(filteredItems)
 
@@ -48,7 +47,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`xl:px-8 ${theme?.colors.background} pt-2 lg:pt-4 -mb-3 sticky top-0 z-10`}
+      className={`xl:px-2 ${theme?.colors.background} pt-2  -mb-3 sticky top-0 z-10`}
     >
       <div className='flex justify-between items-center w-full lg:px-2 py-2'>
         {/* navbar start */}
@@ -102,7 +101,7 @@ const Navbar = () => {
         </div>
 
         {/* navbar center */}
-        <div className='hidden lg:flex'>
+        <div className='hidden lg:flex '>
           <Menu filteredItems={filteredItems} />
         </div>
         {/* 
@@ -145,16 +144,7 @@ navbar end
                       Profile
                     </Link>
                   </li>
-                  {userData?.role === 'admin' && (
-                    <li>
-                      <Link
-                        to='/dashboard'
-                        className='btn btn-sm bg-green-lantern hover:bg-deep-ocean rounded-lg hover:rounded-full border-2 border-green-lantern hover:border-deep-ocean text-pure-white min-w-28'
-                      >
-                        Dashboard
-                      </Link>
-                    </li>
-                  )}
+                
 
                   <li>
                     <button
@@ -177,7 +167,7 @@ navbar end
           )}
 
           {/* theme controller */}
-          <div className='xl:mr-4 outline outline-deep-ocean flex justify-center items-center rounded-full mt-2 md:mt-3 lg:mt-0 xl:mt-1 h-9 w-9  lg:h-10 lg:w-10'>
+          <div className='xl:mr-4 outline outline-deep-ocean flex justify-center items-center rounded-full md:mt- lg:-mt-2 h-9 w-9  lg:h-10 lg:w-10'>
             <label className='swap swap-rotate'>
               {/* this hidden checkbox controls the state */}
               <input
