@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import { createContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ThemeContext } from '../hooks/useTheme';
 
-export const ThemeContext = createContext(null);
+// export const ThemeContext = createContext(null);
 
 const themes = {
   light: {
