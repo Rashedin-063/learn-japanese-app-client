@@ -9,15 +9,14 @@ export default {
     },
     extend: {
       colors: {
-        'faded-pearl': '#E6DFAF',
-        'midnight-gray': '	##3c3c3c',
-        'deep-ocean': '#004080',
-        'green-lantern': '#046645',
-        'pure-white': '#FFFFFF',
-        'charcoal-gray': '#000000',
+        'zen-serenity': '#E0DBD6',
+        'blossom-haze': '#FED6FC',
+        'amber-glow': '#FE9230',
+        'green-heaven': '#347928',
+        'autumn-ember': '#7D0215',
+        'crimson-gate': '#EC2213',
       },
     },
   },
   plugins: [require('daisyui')],
 };
-

@@ -7,16 +7,16 @@ import { ThemeContext } from '../hooks/useTheme';
 const themes = {
   light: {
     colors: {
-      primary: 'text-deep-ocean',
-      background: 'bg-faded-pearl',
-      textPrimary: 'text-charcoal-gray',
+      primary: 'text-amber-glow',
+      background: 'bg-zen-serenity',
+      textPrimary: 'text-autumn-ember',
     },
   },
   dark: {
     colors: {
-      primary: 'text-green-lantern',
-      background: 'bg-midnight-gray',
-      textPrimary: 'text-pure-white',
+      primary: 'text-green-heaven',
+      background: 'bg-blossom-haze',
+      textPrimary: 'text-crimson-gate',
     },
   },
 };

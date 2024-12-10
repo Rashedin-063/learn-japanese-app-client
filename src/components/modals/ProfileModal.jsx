@@ -138,7 +138,7 @@ const ProfileModal = ({ isOpen, closeModal, userData }) => {
             {/* close btn */}
             <button
               onClick={closeModal}
-              className='absolute -top-3 -right-3 bg-green-lantern rounded-full p-2 cursor-pointer'
+              className='absolute -top-3 -right-3 bg-green-heaven rounded-full p-2 cursor-pointer'
             >
               <MdClose color='white' size={20} />
             </button>
@@ -199,10 +199,10 @@ const ProfileModal = ({ isOpen, closeModal, userData }) => {
                 <button
                   disabled={loading}
                   type='submit'
-                  className='btn bg-green-lantern text-pure-white hover:bg-deep-ocean mt-2'
+                  className='btn bg-green-heaven text-pure-white hover:bg-amber-glow mt-2'
                 >
                   {loading ? (
-                    <ImSpinner9 className='animate-spin m-auto text-deep-ocean' />
+                    <ImSpinner9 className='animate-spin m-auto text-amber-glow' />
                   ) : (
                     'Update'
                   )}

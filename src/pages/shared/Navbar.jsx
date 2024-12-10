@@ -21,14 +21,12 @@ const Navbar = () => {
     { to: '/tutorials', label: 'Tutorials' },
     { to: '/courses', label: 'Courses' },
     { to: '/dashboard', label: 'Dashboard' },
-
   ];
 
-    const filteredItems =
-      userData?.role === 'admin'
-        ? items
-        : items.filter((item) => item.to !== '/dashboard');
-
+  const filteredItems =
+    userData?.role === 'admin'
+      ? items
+      : items.filter((item) => item.to !== '/dashboard');
 
   // console.log(filteredItems)
 
@@ -77,7 +75,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className={`dropdown-content rounded-box z-10 mt-48 ml-4 flex flex-col gap-4 shadow-xl  pl-9 pt-12 pb-4 border-2 border-green-lantern  ${
+                className={`dropdown-content rounded-box z-10 mt-48 ml-4 flex flex-col gap-4 shadow-xl  pl-9 pt-12 pb-4 border-2 border-green-heaven  ${
                   theme?.colors?.background
                 } ${theme?.colors?.textPrimary} ${user ? 'w-[220px]' : 'w-40'}`}
               >
@@ -115,7 +113,7 @@ navbar end
                 <div
                   tabIndex={0}
                   role='button'
-                  className=' btn-circle avatar h-9 w-9 lg:h-10 lg:w-10 outline outline-green-lantern rounded-full'
+                  className=' btn-circle avatar h-9 w-9 lg:h-10 lg:w-10 outline outline-green-heaven rounded-full'
                 >
                   <div className=' rounded-full'>
                     <Tooltip
@@ -134,21 +132,20 @@ navbar end
                 </div>
                 <ul
                   tabIndex={0}
-                  className='menu menu-sm dropdown-content bg-faded-pearl border-2 border-midnight-gray z-20 mt-3 p-2 w-36 drop-shadow-xl pt-8 pb-4 flex flex-col items-center space-y-2 rounded-xl'
+                  className='menu menu-sm dropdown-content bg-zen-serenity border-2 border-blossom-haze z-20 mt-3 p-2 w-36 drop-shadow-xl pt-8 pb-4 flex flex-col items-center space-y-2 rounded-xl'
                 >
                   <li>
                     <Link
                       to='/profile'
-                      className='btn btn-sm bg-green-lantern hover:bg-deep-ocean rounded-lg hover:rounded-full border-2 border-green-lantern hover:border-deep-ocean text-pure-white min-w-28'
+                      className='btn btn-sm bg-green-heaven hover:bg-amber-glow rounded-lg hover:rounded-full border-2 border-green-heaven hover:border-amber-glow text-pure-white min-w-28'
                     >
                       Profile
                     </Link>
                   </li>
-                
 
                   <li>
                     <button
-                      className='btn btn-sm bg-deep-ocean hover:bg-green-lantern rounded-lg hover:rounded-full border-2 border-green-lantern hover:border-deep-ocean text-pure-white min-w-28'
+                      className='btn btn-sm bg-amber-glow hover:bg-green-heaven rounded-lg hover:rounded-full border-2 border-green-heaven hover:border-amber-glow text-pure-white min-w-28'
                       onClick={handleLogOut}
                     >
                       {' '}
@@ -167,7 +164,7 @@ navbar end
           )}
 
           {/* theme controller */}
-          <div className='xl:mr-4 outline outline-deep-ocean flex justify-center items-center rounded-full md:mt- lg:-mt-2 h-9 w-9  lg:h-10 lg:w-10'>
+          <div className='xl:mr-4 outline outline-amber-glow flex justify-center items-center rounded-full md:mt- lg:-mt-2 h-9 w-9  lg:h-10 lg:w-10'>
             <label className='swap swap-rotate'>
               {/* this hidden checkbox controls the state */}
               <input
