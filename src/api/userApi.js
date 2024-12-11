@@ -18,8 +18,6 @@ export const createOrUpdateUser = async (userInfo) => {
     return res;
   } catch (error) {
     console.error(error);
-    swalAlert('error', error.message);
-    throw error;
   }
 };
 

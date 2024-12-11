@@ -4,6 +4,8 @@ import Root from '../layouts/Root';
 import Home from '../pages/Home';
 import Login from '../pages/auth/Login';
 import Register from './../pages/auth/Register';
+import PrivateRoute from './PrivateRoute';
+import Lessons from '../pages/Lessons';
 
 
 const router = createBrowserRouter([
@@ -24,7 +26,12 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register/>
       },
-      
+      {
+        path: '/lessons',
+        element: <PrivateRoute>
+          <Lessons/>
+        </PrivateRoute>
+      }
     ],
   },
 
