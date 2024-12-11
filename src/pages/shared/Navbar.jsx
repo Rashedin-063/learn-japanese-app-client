@@ -77,9 +77,9 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className={`dropdown-content rounded-box z-10 mt-48 ml-4 flex flex-col gap-4 shadow-xl  pl-9 pt-12 pb-4 border-2 border-green-heaven  ${
+                className={`dropdown-content rounded-box z-10 mt-[210px] ml-4 flex flex-col gap-4 shadow-xl w-32  py-4 border-2 border-green-heaven text-center  ${
                   theme?.colors?.background
-                } ${theme?.colors?.textPrimary} ${user ? 'w-[220px]' : 'w-40'}`}
+                } ${theme?.colors?.textPrimary}`}
               >
                 <Menu filteredItems={filteredItems} />
                 {/* theme controller */}
