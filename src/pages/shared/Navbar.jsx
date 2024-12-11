@@ -108,7 +108,7 @@ navbar end
 */}
         <div className='flex gap-2 mr-4 xl:-mr-4 xl:mt-2 item-center'>
           {user ? (
-            <div className='flex gap-2 items-center mt-1 lg:-mt-[3px]'>
+            <div className='flex gap-2 items-center lg:-mt-[7px] xl:-mt-2'>
               <div className='dropdown dropdown-end'>
                 <div
                   tabIndex={0}
@@ -118,7 +118,6 @@ navbar end
                   <div className=' rounded-full'>
                     <Tooltip
                       title={user.displayName}
-                      TransitionComponent={Zoom}
                       arrow
                     >
                       <img
@@ -132,20 +131,11 @@ navbar end
                 </div>
                 <ul
                   tabIndex={0}
-                  className='menu menu-sm dropdown-content bg-zen-serenity border-2 border-blossom-haze z-20 mt-3 p-2 w-36 drop-shadow-xl pt-8 pb-4 flex flex-col items-center space-y-2 rounded-xl'
+                  className='menu menu-sm dropdown-content bg-zen-serenity border-2 border-blossom-haze z-20 mt-3 p-2 w-36 drop-shadow-xl flex flex-col items-center space-y-2 rounded-xl'
                 >
                   <li>
-                    <Link
-                      to='/profile'
-                      className='btn btn-sm bg-green-heaven hover:bg-amber-glow rounded-lg hover:rounded-full border-2 border-green-heaven hover:border-amber-glow text-pure-white min-w-28'
-                    >
-                      Profile
-                    </Link>
-                  </li>
-
-                  <li>
                     <button
-                      className='btn btn-sm bg-amber-glow hover:bg-green-heaven rounded-lg hover:rounded-full border-2 border-green-heaven hover:border-amber-glow text-pure-white min-w-28'
+                      className='btn btn-sm bg-amber-glow hover:bg-green-heaven rounded-lg hover:rounded-full text-pure-white min-w-28 border-none'
                       onClick={handleLogOut}
                     >
                       {' '}
