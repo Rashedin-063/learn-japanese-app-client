@@ -21,7 +21,7 @@ const Footer = () => {
               <div>
                 <Link
                   to='/lessons'
-                  className='text-lg lg:text-xl font-bold cursor-pointer flex items-center font-playwrite opacity-92'
+                  className='text-lg lg:text-xl font-bold cursor-pointer flex items-center font-playwrite text-zen-serenity'
                 >
                   Learn Japanese
                 </Link>

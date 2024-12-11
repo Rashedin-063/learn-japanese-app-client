@@ -5,3 +5,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer a{
+cursor: pointer;
+color : #E0DBD6
+}
