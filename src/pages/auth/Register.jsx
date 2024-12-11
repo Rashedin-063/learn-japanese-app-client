@@ -62,13 +62,11 @@ const Register = () => {
       await updateUserProfile(name, image_url);
 
       const userInfo = {
-        displayName: name,
-        email,
-        photoURL: image_url,
-        subscription: 'usual',
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
         role: 'user',
         status: 'verified',
-        premiumToken: null,
       };
 
       createOrUpdateUser(userInfo);
@@ -164,7 +162,7 @@ toast.success('Registration  Successful')
             <button
               disabled={loading}
               type='submit'
-              className='btn bg-green-heaven text-pure-white
+              className='btn bg-green-heaven text-zen-charcoal
               hover:bg-green-600 mt-2'
             >
               {loading ? (

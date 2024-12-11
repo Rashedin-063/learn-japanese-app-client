@@ -9,7 +9,7 @@ export const createOrUpdateUser = async (userInfo) => {
     const res = await axiosApi.put('/users', userInfo);
 
     if (res.data.upsertedId) {
-      toast.success('User added to the database');
+      swalAlert('success', 'User added to the database')
     }
 
     if (res.data.modifiedCount) {

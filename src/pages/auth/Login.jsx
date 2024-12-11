@@ -13,7 +13,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { toast } from 'react-toastify';
 import { createOrUpdateUser } from '../../api/userApi';
-import swalAlert from '../../api/swalAlert';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,7 +34,7 @@ const Login = () => {
     try {
       setLoading(true);
       await logInUser(email, password);
-      swalAlert('success', 'Sign Up Successful', 'top-right');
+      toast.success('Sign Up Successful');
       navigate(from);
     } catch (err) {
       //console.log(err);
@@ -99,7 +98,7 @@ const Login = () => {
             <button
               type='submit'
               disabled={loading}
-              className='btn bg-green-heaven text-pure-white
+              className='btn bg-green-heaven text-zen-charcoal
               hover:bg-green-600 text-base text-light-cream'
             >
               {loading ? (

@@ -27,10 +27,8 @@ const SocialLogin = () => {
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
-        subscription: 'usual',
         role: 'user',
         status: 'verified',
-        premiumToken: null,
       };
 
       createOrUpdateUser(userInfo);
@@ -56,10 +54,8 @@ const SocialLogin = () => {
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
-        subscription: 'usual',
         role: 'user',
         status: 'verified',
-        premiumToken: null,
       };
 
       createOrUpdateUser(userInfo);
@@ -82,7 +78,7 @@ const SocialLogin = () => {
           disabled={loading}
           onClick={handleGoogleLogin}
           className='cursor-pointer text-lg flex gap-3 items-center bg-amber-glow 
-          hover:bg-amber-500 px-8 py-2 rounded-md mb-2 md:mb-0 justify-center disabled:bg-gray-600 disabled:cursor-not-allowed'
+          hover:bg-amber-500 text-autumn-ember px-8 py-2 rounded-md mb-2 md:mb-0 justify-center disabled:bg-gray-600 disabled:cursor-not-allowed'
         >
           <FaGoogle size={21} />
           <p className='text-base'>Google Login</p>
@@ -90,7 +86,7 @@ const SocialLogin = () => {
         <button
           disabled={loading}
           onClick={handleGithubLogin}
-          className='cursor-pointer text-lg flex gap-3 items-center bg-amber-glow 
+          className='cursor-pointer text-lg flex gap-3 items-center bg-amber-glow text-autumn-ember 
           hover:bg-amber-500 px-8 py-2 rounded-md justify-center disabled:bg-gray-600 disabled:cursor-not-allowed'
         >
           <FaGithub size={23} />

@@ -13,6 +13,8 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const { user, logOutUser } = useAuth();
   const [userData] = useLoadUser();
+  console.log(userData)
+  
 
   const navigate = useNavigate();
 
@@ -135,7 +137,7 @@ navbar end
                 >
                   <li>
                     <button
-                      className='btn btn-sm bg-amber-glow hover:bg-green-heaven rounded-lg hover:rounded-full text-pure-white min-w-28 border-none'
+                      className='btn btn-sm bg-amber-glow hover:bg-green-heaven rounded-lg hover:rounded-full text-zen-charcoal min-w-28 border-none'
                       onClick={handleLogOut}
                     >
                       {' '}
