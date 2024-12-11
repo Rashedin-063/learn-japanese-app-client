@@ -15,6 +15,7 @@ export default {
         'green-heaven': '#347928',
         'autumn-ember': '#7D0215',
         'crimson-gate': '#EC2213',
+        'zen-charcoal': '#1C1C1C',
       },
     },
   },
