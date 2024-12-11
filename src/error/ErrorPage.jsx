@@ -12,8 +12,8 @@ const ErrorPage = () => {
         animationData={Animation}
         style={{height: '300px'}}
       />
-      <Link to='/' refresh='true'>
-        <Button label='Go to Home' type='primary'></Button>
+      <Link to='/lessons' refresh='true'>
+        <Button label='Go to Lessons' type='primary'></Button>
       </Link>
     </div>
   );

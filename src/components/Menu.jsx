@@ -17,8 +17,8 @@ const Menu = ({ filteredItems = [] }) => {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? 'border-b-2 rounded-lg border-zen-charcoal px-1 text-lg lg:text-xl font-semibold'
-                  : 'px-1 lg:text-lg hover:border-b-2 border-zen-charcoal'
+                  ? 'border border-b-4 border-r-4 border-zen-charcoal px-4  pb-1 rounded-xl text-lg lg:text-xl hover:border-amber-glow font-semibold'
+                  : 'px-4 lg:text-lg hover:border-b-2 pb-1 rounded-xl border-zen-charcoal'
               }
             >
               {label}

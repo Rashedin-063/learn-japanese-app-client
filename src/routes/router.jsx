@@ -6,6 +6,7 @@ import Login from '../pages/auth/Login';
 import Register from './../pages/auth/Register';
 import PrivateRoute from './PrivateRoute';
 import Lessons from '../pages/Lessons';
+import DefaultRoute from './DefaultRoute';
 
 
 const router = createBrowserRouter([
@@ -16,25 +17,30 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: (
+          <DefaultRoute>
+            <Home />
+          </DefaultRoute>
+        ),
       },
       {
         path: '/login',
-        element: <Login/>
+        element: <Login />,
       },
       {
         path: '/register',
-        element: <Register/>
+        element: <Register />,
       },
       {
         path: '/lessons',
-        element: <PrivateRoute>
-          <Lessons/>
-        </PrivateRoute>
-      }
+        element: (
+          <PrivateRoute>
+            <Lessons />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
-
 ]);
 
 export default router;
