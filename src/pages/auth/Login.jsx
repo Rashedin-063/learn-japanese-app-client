@@ -63,6 +63,7 @@ const Login = () => {
               {...register('email', { required: 'Email is required' })}
               placeholder='Email'
               className='input input-bordered'
+             autoComplete='username'
             />
             {errors.email && (
               <p className='text-red-500 mt-2'>{errors.email.message}</p>

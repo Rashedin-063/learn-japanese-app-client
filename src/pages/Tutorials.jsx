@@ -1,6 +1,6 @@
 const Tutorials = () => {
   return (
-    <div>Tutorials</div>
+    <div></div>
   )
 }
 export default Tutorials

@@ -7,6 +7,11 @@ import Register from './../pages/auth/Register';
 import PrivateRoute from './PrivateRoute';
 import Lessons from '../pages/Lessons';
 import DefaultRoute from './DefaultRoute';
+import Tutorials from './../pages/Tutorials';
+import Courses from './../pages/Courses';
+import AdminRoute from './AdminRoute';
+import DashboardLayout from '../layouts/DashboardLayout';
+import Tash from '../pages/dashboard/Tash';
 
 
 const router = createBrowserRouter([
@@ -37,6 +42,42 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <Lessons />
           </PrivateRoute>
+        ),
+      },
+      {
+        path: '/tutorials',
+        element: (
+          <PrivateRoute>
+            <Tutorials />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/courses',
+        element: (
+          <PrivateRoute>
+            <Courses />
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+  {
+    path: '/dashboard',
+    element: (
+      <PrivateRoute>
+        <AdminRoute>
+          <DashboardLayout />
+        </AdminRoute>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: (
+          <AdminRoute>
+            <Tash />
+          </AdminRoute>
         ),
       },
     ],

@@ -49,7 +49,7 @@ const Navbar = () => {
     <div
       className={`xl:px-2 ${theme?.colors.background} pt-2  -mb-3 sticky top-0 z-10`}
     >
-      <div className='flex justify-between items-center w-full lg:px-2 py-2'>
+      <div className='flex justify-between items-center w-full lg:px-2'>
         {/* navbar start */}
         <div className='flex lg:-mt-2'>
           {/* dropdown: logo and menu for medium and other screens */}
@@ -77,9 +77,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className={`dropdown-content rounded-box z-10 mt-[210px] ml-4 flex flex-col gap-4 shadow-xl w-32  py-4 border-2 border-green-heaven text-center  ${
-                  theme?.colors?.background
-                } ${theme?.colors?.textPrimary}`}
+                className={`dropdown-content rounded-box z-10 mt-[210px] ml-4 flex flex-col gap-4 shadow-xl w-32  py-4 border-2 border-green-heaven text-center  ${theme?.colors?.background} ${theme?.colors?.textPrimary}`}
               >
                 <Menu filteredItems={filteredItems} />
                 {/* theme controller */}
@@ -118,10 +116,7 @@ navbar end
                   className=' btn-circle avatar h-9 w-9 lg:h-10 lg:w-10 outline outline-green-heaven rounded-full'
                 >
                   <div className=' rounded-full'>
-                    <Tooltip
-                      title={user.displayName}
-                      arrow
-                    >
+                    <Tooltip title={user.displayName} arrow>
                       <img
                         referrerPolicy='no-referrer'
                         className=' mb-2 md:mb-0'
@@ -189,7 +184,9 @@ navbar end
       </div>
 
       {/* border */}
-      <div className='border-[1px] border-gray-600 w-[92%] md:w-[95%] xl:w-full mx-auto xl:my-2 border-opacity-45'></div>
+      <div className='border-[1px] border-gray-900 w-[89%] md:w-[90%] xl:w-[95%] mx-auto  border-opacity-45 mb-[1.5px] rounded-lg'></div>
+      <div className='border-[1px] border-gray-900 w-[92%] md:w-[95%] xl:w-full mx-auto border-opacity-45'></div>
+      <div className='border-[1px] border-gray-900 w-[89%] md:w-[90%] xl:w-[95%] mx-auto  border-opacity-45 mt-[1.4px] rounded-lg'></div>
     </div>
   );
 };

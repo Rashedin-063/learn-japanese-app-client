@@ -4,7 +4,8 @@ import { Navigate } from 'react-router-dom';
 
 const DefaultRoute = () => {
   const { user, loading } = useAuth();
-
+{user && console.log(user.role)
+}
   // loading state
   if (loading) {
     return (
@@ -21,14 +22,11 @@ const DefaultRoute = () => {
     );
   }
 
-  if (user && user.role === 'user') {
-    return <Navigate to='/lessons' />;
-  }
   if (user && user.role === 'admin') {
     return <Navigate to='/dashboard' />;
   }
-  if (!user) {
-    return <Navigate to='/login' />;
+  if (user && user.role === 'user') {
+    return <Navigate to='/lessons' />;
   }
 
   return <div></div>;
