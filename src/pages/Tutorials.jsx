@@ -12,27 +12,27 @@ const Tutorials = () => {
     {
       id: 2,
       title: 'Learn Japanese in 4 Hours - ALL the Japanese Basics You Need',
-      videoId: '8YV8KmfBbBM?si=M5QISDBuxsv1sjqG',
+      videoId: '8YV8KmfBbBM',
       description:
         'Complete Japanese basics course covering essential vocabulary and grammar',
     },
     {
       id: 3,
       title: 'Japanese Numbers & Counting - Complete Japanese From Zero!',
-      videoId: 'BmqrRbLqXDk',
+      videoId: '94F5sTXhhjg',
       description:
         'Master Japanese numbers and counting system from basics to advanced',
     },
     {
       id: 4,
       title: '100 Most Important Japanese Phrases You Need to Know',
-      videoId: '8-2L_M2LhPM',
+      videoId: '66P5_R37vek',
       description: 'Essential Japanese phrases for everyday conversations',
     },
     {
       id: 5,
       title: 'Japanese Grammar Made Easy - All About Particles を,に,で,へ',
-      videoId: 'VQSQwog4HwY',
+      videoId: 'H6P3KtT2YyE',
       description:
         'Detailed explanation of basic Japanese particles and their usage',
     },
@@ -66,7 +66,7 @@ const Tutorials = () => {
             </div>
             <div className='p-4'>
               <h3 className='font-semibold text-lg mb-2'>{tutorial.title}</h3>
-              <p className='text-gray-600'>{tutorial.description}</p>
+              <p className='text-zen-charcoal'>{tutorial.description}</p>
             </div>
           </div>
         ))}
