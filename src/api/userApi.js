@@ -39,6 +39,7 @@ export const updateProfileInfo = async (updatedInfo, email) => {
   }
 };
 
+
 // post lesson info
 export const postLessonInfo = async (lessonData) => {
   try {
@@ -50,6 +51,25 @@ export const postLessonInfo = async (lessonData) => {
 
     if (res.data.insertedId) {
       swalAlert('success', 'lesson created successfully');
+    }
+  } catch (error) {
+    console.error(error);
+    swalAlert('error', error.message);
+  }
+};
+
+
+// post Vocabulary info
+export const postVocabularyInfo = async (vocabularyData) => {
+  try {
+    //console.log(vocabularyData)
+
+    const res = await axiosApi.post('/vocabularies', vocabularyData);
+
+    //console.log(res)
+
+    if (res.data.insertedId) {
+      swalAlert('success', 'vocabulary created successfully');
     }
   } catch (error) {
     console.error(error);

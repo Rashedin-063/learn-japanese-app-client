@@ -2,9 +2,13 @@ import { Helmet } from 'react-helmet-async';
 
 import React, { useState } from 'react';
 import PageTitle from './../../components/PageTitle';
+import useAuth from '../../hooks/useAuth';
+import { ImSpinner9 } from 'react-icons/im';
+import { postVocabularyInfo } from '../../api/userApi';
 
 const AddVocabularies = () => {
   const [loading, setLoading] = useState(false);
+ const { user, logOutUser } = useAuth();
 
   const handleAddVocabulary = async (e) => {
     e.preventDefault();
@@ -13,12 +17,12 @@ const AddVocabularies = () => {
       pronunciation: e.target.pronunciation.value,
       whenToSay: e.target.whenToSay.value,
       lessonNo: e.target.lessonNo.value,
-      adminEmail: e.target.adminEmail.value,
+      adminEmail: user?.email || 'ading@example.com',
     };
 
     try {
       setLoading(true);
-      // Here you would typically make an API call to save the data
+     {user && postVocabularyInfo(vocabularyData);}
       console.log('Vocabulary Data:', vocabularyData);
       setLoading(false);
       // Clear form
@@ -31,7 +35,7 @@ const AddVocabularies = () => {
   };
 
   return (
-    <div className='-mt-8 overflow-x-auto'>
+    <div className=' overflow-x-auto'>
       <Helmet>
         <title>Learn Japanese || Add Vocabularies</title>
       </Helmet>
@@ -76,23 +80,7 @@ const AddVocabularies = () => {
             />
           </div>
 
-          <div className='form-control'>
-            <label
-              htmlFor='whenToSay'
-              className='block text-base font-medium text-zen-charcoal mb-1'
-            >
-              When to Say
-            </label>
-            <textarea
-              id='whenToSay'
-              name='whenToSay'
-              placeholder='Used for greeting'
-              required
-              className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
-              rows='3'
-            />
-          </div>
-
+          {/* lesson no */}
           <div className='form-control'>
             <label
               htmlFor='lessonNo'
@@ -110,50 +98,32 @@ const AddVocabularies = () => {
             />
           </div>
 
+          {/* when to say */}
           <div className='form-control'>
             <label
-              htmlFor='adminEmail'
+              htmlFor='whenToSay'
               className='block text-base font-medium text-zen-charcoal mb-1'
             >
-              Admin Email
+              When to Say
             </label>
-            <input
-              type='email'
-              id='adminEmail'
-              name='adminEmail'
-              placeholder='admin@example.com'
+            <textarea
+              id='whenToSay'
+              name='whenToSay'
+              placeholder='Used for greeting'
               required
               className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
+              rows='3'
             />
           </div>
 
-          <div className='form-control mt-6'>
+          <div className='form-control pt-4'>
             <button
               disabled={loading}
               type='submit'
-              className='w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50'
+              className='w-full bg-green-heaven text-white py-3 px-4 rounded-md hover:bg-green-700 transition-colors disabled:opacity-50'
             >
               {loading ? (
-                <svg
-                  className='animate-spin h-5 w-5 mx-auto'
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                >
-                  <circle
-                    className='opacity-25'
-                    cx='12'
-                    cy='12'
-                    r='10'
-                    stroke='currentColor'
-                    strokeWidth='4'
-                  ></circle>
-                  <path
-                    className='opacity-75'
-                    fill='currentColor'
-                    d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-                  ></path>
-                </svg>
+                <ImSpinner9 className='animate-spin m-auto text-deep-ocean' />
               ) : (
                 'Add Vocabulary'
               )}
