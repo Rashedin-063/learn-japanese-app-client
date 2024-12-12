@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Tutorials = () => {
   const tutorials = [
@@ -45,33 +46,38 @@ const Tutorials = () => {
   ];
 
   return (
-    <div className='container mx-auto px-4 py-8'>
-      <h1 className='text-3xl font-bold text-center mb-8'>
-        Japanese Language Tutorials
-      </h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
-        {tutorials.map((tutorial) => (
-          <div
-            key={tutorial.id}
-            className='bg-zen-serenity rounded-lg drop-shadow-2xl overflow-hidden'
-          >
-            <div className='aspect-w-16 aspect-h-9'>
-              <iframe
-                src={`https://www.youtube.com/embed/${tutorial.videoId}`}
-                title={tutorial.title}
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-                className='w-full h-full'
-              ></iframe>
+    <>
+      <Helmet>
+        <title>Learn Japanese || Tutorials</title>
+      </Helmet>
+      <div className='container mx-auto px-4 py-8'>
+        <h1 className='text-3xl font-bold text-center mb-8'>
+          Japanese Language Tutorials
+        </h1>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
+          {tutorials.map((tutorial) => (
+            <div
+              key={tutorial.id}
+              className='bg-zen-serenity rounded-lg drop-shadow-2xl overflow-hidden'
+            >
+              <div className='aspect-w-16 aspect-h-9'>
+                <iframe
+                  src={`https://www.youtube.com/embed/${tutorial.videoId}`}
+                  title={tutorial.title}
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                  className='w-full h-full'
+                ></iframe>
+              </div>
+              <div className='p-4'>
+                <h3 className='font-semibold text-lg mb-2'>{tutorial.title}</h3>
+                <p className='text-zen-charcoal'>{tutorial.description}</p>
+              </div>
             </div>
-            <div className='p-4'>
-              <h3 className='font-semibold text-lg mb-2'>{tutorial.title}</h3>
-              <p className='text-zen-charcoal'>{tutorial.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

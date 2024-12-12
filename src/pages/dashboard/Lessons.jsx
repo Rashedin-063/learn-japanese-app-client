@@ -4,7 +4,7 @@ const Lessons = () => {
   return (
     <>
       <Helmet>
-        <title>Learn Japanese || Lessons</title>
+        <title>Learn Japanese || Admin - Lessons</title>
       </Helmet>
     </>
   );

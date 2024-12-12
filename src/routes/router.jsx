@@ -12,6 +12,10 @@ import Courses from './../pages/Courses';
 import AdminRoute from './AdminRoute';
 import DashboardLayout from '../layouts/DashboardLayout';
 import AddLesson from '../pages/dashboard/AddLesson';
+import AddVocabularies from '../pages/dashboard/AddVocabularies';
+import ManageUsers from '../pages/dashboard/ManageUsers';
+import LessonManagement from '../pages/dashboard/LessonManagement';
+import VocabularyManagement from '../pages/dashboard/VocabularyManagement';
 
 
 
@@ -86,6 +90,38 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AddLesson />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: 'add-vocabularies',
+        element: (
+          <AdminRoute>
+          <AddVocabularies />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: 'manage-users',
+        element: (
+          <AdminRoute>
+         <ManageUsers />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: 'lesson-management',
+        element: (
+          <AdminRoute>
+     <LessonManagement/>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: 'vocabulary-management',
+        element: (
+          <AdminRoute>
+     <VocabularyManagement/>
           </AdminRoute>
         ),
       },

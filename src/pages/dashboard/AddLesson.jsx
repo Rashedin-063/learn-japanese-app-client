@@ -35,7 +35,7 @@ const AddLesson = () => {
       className='mt-4 lg:mt-8 overflow-x-auto'
     >
       <Helmet>
-        <title>Learn Japanese || Admin - Add Lesson</title>
+        <title>Learn Japanese || Add Lesson</title>
       </Helmet>
 
       <div className='mx-4 lg:w-2/3 lg:mx-auto  p-8 lg:p-12 pt-8 rounded-xl'>

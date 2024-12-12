@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Courses = () => {
   const courses = [
@@ -96,6 +97,9 @@ const Courses = () => {
 
   return (
     <div className='container mx-auto px-4 py-8'>
+      <Helmet>
+        <title>Learn Japanese || Courses</title>
+      </Helmet>
       <h1 className='text-3xl font-bold text-center  mb-8'>
         Popular Japanese Learning Platforms
       </h1>
