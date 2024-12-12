@@ -15,8 +15,8 @@ const useLoadUser = () => {
     isError,
     error,
   } = useQuery({
-    queryKey: ['user', user?.email],
-    enabled: !loading && !!token,
+    queryKey: ['user', user?.email,],
+   
     queryFn: async () => {
       const { data } = await axiosSecure.get(`/users/${user?.email}`);
 
