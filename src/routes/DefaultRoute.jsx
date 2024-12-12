@@ -3,14 +3,15 @@ import useAuth from '../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
 import useLoadUser from '../hooks/useLoadUser';
 
-const DefaultRoute = () => {
+const DefaultRoute = ({children}) => {
   const { user, loading } = useAuth();
-    const [userData] = useLoadUser();
-    console.log(userData);
-{user && console.log(userData.role)
-}
+  const [userData] = useLoadUser();
+
+  {
+    console.log('role', userData.role);
+  }
   // loading state
-  if (!user && loading) {
+  if (loading || (user && !userData?.role)) {
     return (
       <div className='text-center flex justify-center items-center min-h-[70vh]'>
         <div className='flex flex-col m-8 rounded shadow-md w-60 sm:w-80 animate-pulse h-96'>
@@ -25,14 +26,21 @@ const DefaultRoute = () => {
     );
   }
 
-  if (user && user.role === 'admin') {
+  // Redirect to login if user is not authenticated
+  if (!user) {
+    return <Navigate to='/login' />;
+  }
+
+  // Redirect based on user role
+  if (userData?.role === 'admin') {
     return <Navigate to='/dashboard' />;
   }
-  if (user && user.role === 'user') {
+  if (userData?.role === 'user') {
     return <Navigate to='/lessons' />;
   }
 
-  return <div></div>;
+  // Render children if no redirection occurs
+  return <div>{children}</div>;
 };
 
 

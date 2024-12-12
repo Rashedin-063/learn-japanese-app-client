@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 
 const AdminRoute = ({children}) => {
-    const { user, loading } = useAuth(); 
+    const {loading } = useAuth(); 
     const [userData, , isLoading] = useLoadUser();
 
     const location = useLocation();
@@ -15,12 +15,12 @@ const AdminRoute = ({children}) => {
         return <LoadingSpinner/>
     }
 
-    if (user && userData.role === 'admin') {
+    if ( userData.role === 'admin') {
         return children;
     }
 
     toast.warn('Please login as an admin')
-    return <Navigate to="/login" state={{from: location}} replace></Navigate>
+    return <Navigate to="/lessons" state={{from: location}} replace></Navigate>
 };
 
 export default AdminRoute;

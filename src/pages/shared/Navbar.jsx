@@ -13,8 +13,6 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const { user, logOutUser } = useAuth();
   const [userData] = useLoadUser();
-  console.log(userData)
-  
 
   const navigate = useNavigate();
 

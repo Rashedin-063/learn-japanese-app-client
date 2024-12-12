@@ -6,7 +6,7 @@ const useLoadUser = () => {
   const { user, loading } = useAuth();
   const axiosSecure = useAxiosSecure();
 
-  const token = localStorage.getItem('access-token')
+  const token = localStorage.getItem('access-token');
 
   const {
     data: userData = {},
@@ -19,15 +19,13 @@ const useLoadUser = () => {
     enabled: !loading && !!token,
     queryFn: async () => {
       const { data } = await axiosSecure.get(`/users/${user?.email}`);
-      
+
       return data;
-      
     },
     onError: (error) => {
       console.error('Error fetching user:', error);
     },
   });
-
 
   return [userData, refetch, isLoading, isError, error];
 };
