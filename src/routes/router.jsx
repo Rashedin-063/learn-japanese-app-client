@@ -16,6 +16,7 @@ import AddVocabularies from '../pages/dashboard/AddVocabularies';
 import ManageUsers from '../pages/dashboard/ManageUsers';
 import LessonManagement from '../pages/dashboard/LessonManagement';
 import VocabularyManagement from '../pages/dashboard/VocabularyManagement';
+import AdminLessons from './../pages/dashboard/Lessons';
 
 
 
@@ -81,7 +82,7 @@ const router = createBrowserRouter([
         index: true,
         element: (
           <AdminRoute>
-            <Lessons />
+            <AdminLessons />
           </AdminRoute>
         ),
       },
