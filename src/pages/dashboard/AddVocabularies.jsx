@@ -13,17 +13,18 @@ const AddVocabularies = () => {
   const handleAddVocabulary = async (e) => {
     e.preventDefault();
     const vocabularyData = {
-      word: e.target.word.value,
-      pronunciation: e.target.pronunciation.value,
-      whenToSay: e.target.whenToSay.value,
-      lessonNo: e.target.lessonNo.value,
-      adminEmail: user?.email || 'ading@example.com',
+      Word: e.target.word.value,
+      Pronunciation: e.target.pronunciation.value,
+      Meaning: e.target.meaning.value,
+      WhenToSay: e.target.whenToSay.value,
+      LessonNo: e.target.lessonNo.value,
+      AdminEmail: user?.email || 'ading@example.com',
     };
 
     try {
       setLoading(true);
      {user && postVocabularyInfo(vocabularyData);}
-      console.log('Vocabulary Data:', vocabularyData);
+  
       setLoading(false);
       // Clear form
       e.target.reset();
@@ -35,7 +36,7 @@ const AddVocabularies = () => {
   };
 
   return (
-    <div className=' overflow-x-auto'>
+    <div className='-mt-8 overflow-x-auto'>
       <Helmet>
         <title>Learn Japanese || Add Vocabularies</title>
       </Helmet>
@@ -44,7 +45,7 @@ const AddVocabularies = () => {
 
         <form
           onSubmit={handleAddVocabulary}
-          className='space-y-4 bg-green-heaven bg-opacity-10 p-4 md:p-8 lg:px-6 xl:p-8 mt-8 rounded-3xl drop-shadow-2xl'
+          className='space-y-4 bg-green-heaven bg-opacity-10 p4 md:p-6 mt-8 rounded-3xl drop-shadow-2xl'
         >
           <div className='form-control'>
             <label
@@ -62,7 +63,7 @@ const AddVocabularies = () => {
               className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
             />
           </div>
-
+          {/* pronunciation */}
           <div className='form-control'>
             <label
               htmlFor='pronunciation'
@@ -75,6 +76,24 @@ const AddVocabularies = () => {
               id='pronunciation'
               name='pronunciation'
               placeholder='Konnichiwa'
+              required
+              className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
+            />
+          </div>
+
+          {/* meaning */}
+          <div className='form-control'>
+            <label
+              htmlFor='meaning'
+              className='block text-base font-medium text-zen-charcoal mb-1'
+            >
+              Meaning
+            </label>
+            <input
+              type='text'
+              id='meaning'
+              name='meaning'
+              placeholder='Hello'
               required
               className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
             />
@@ -116,7 +135,7 @@ const AddVocabularies = () => {
             />
           </div>
 
-          <div className='form-control pt-4'>
+          <div className='form-control pt-2'>
             <button
               disabled={loading}
               type='submit'

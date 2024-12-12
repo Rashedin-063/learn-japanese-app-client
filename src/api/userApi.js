@@ -69,10 +69,10 @@ export const postVocabularyInfo = async (vocabularyData) => {
     //console.log(res)
 
     if (res.data.insertedId) {
-      swalAlert('success', 'vocabulary created successfully');
+     toast.success('vocabulary added successfully');
     }
   } catch (error) {
     console.error(error);
-    swalAlert('error', error.message);
+    toast.error(error.message);
   }
 };
