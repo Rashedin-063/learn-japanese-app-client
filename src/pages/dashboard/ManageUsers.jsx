@@ -67,7 +67,7 @@ const ManageUsers = () => {
       <PageTitle title={`All Users : ${users?.length}`} />
 
       <div className='overflow-x-auto '>
-        <table className='table table-sm xl:table-md w-full border border-green-heaven xl:w-3/4 mx-auto'>
+        <table className='table table-sm xl:table-md w-full border border-green-heaven xl:w-3/4 mx-auto mt-8'>
           {/* head */}
           <thead>
             <tr className=' border-b-2 border-green-heaven text-[16px] text-slate-800 text-center '>

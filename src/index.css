@@ -10,3 +10,13 @@
 cursor: pointer;
 color : #E0DBD6;
 }
+
+   input, textarea, select{
+    background-color: #dcf8e5;
+  }
+ 
+  input:focus, 
+  textarea:focus, 
+  select:focus {
+   background-color: #bef1ce;;
+  }

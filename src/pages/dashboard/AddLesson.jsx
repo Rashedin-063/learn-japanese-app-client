@@ -32,17 +32,17 @@ const AddLesson = () => {
   return (
     <div
       onClick={isActive ? handleToggle : undefined}
-      className='mt-4 lg:mt-8 overflow-x-auto'
+      className='mt- lg:mt-8 overflow-x-auto'
     >
       <Helmet>
         <title>Learn Japanese || Add Lesson</title>
       </Helmet>
 
-      <div className='mx-4 lg:w-2/3 lg:mx-auto  p-8 lg:p-12 pt-8 rounded-xl'>
-        <PageTitle title='Add Lesson' />
+      <div className='md:mx-4 lg:w-5/6 xl:w-2/3 lg:mx-auto md:p-8 lg:p-12 rounded-xl'>
+        <PageTitle title='Add Lessons' />
         <form
           onSubmit={handleAddLesson}
-          className='space-y-2 bg-zen-serenity p-4 md:p-16 lg:p-6 xl:p-16 bg-opacity-45 rounded-3xl drop-shadow-2xl mt-8'
+          className='space-y-2 bg-green-heaven p-4 md:p-16 lg:p-6 xl:p-16 bg-opacity-10 rounded-3xl drop-shadow-2xl mt-8'
         >
           <div className='form-control'>
             <label htmlFor='lessonName' className='font-medium'>
@@ -54,7 +54,7 @@ const AddLesson = () => {
               name='lessonName'
               placeholder='Lesson Name'
               required
-              className='input input-bordered bg-gray-200 placeholder:font-semibold placeholder:text-gray-500'
+              className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
             />
           </div>
 
@@ -66,7 +66,7 @@ const AddLesson = () => {
               type='number'
               placeholder='Lesson Number'
               required
-              className='input input-bordered placeholder:font-semibold placeholder:text-gray-500 w-full'
+              className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
               name='lessonNumber'
               id='lessonNumber'
             />
