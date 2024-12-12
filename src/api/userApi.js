@@ -1,4 +1,3 @@
-
 import { axiosApi } from './axiosApi';
 import swalAlert from './swalAlert';
 import { toast } from 'react-toastify';
@@ -9,7 +8,7 @@ export const createOrUpdateUser = async (userInfo) => {
     const res = await axiosApi.put('/users', userInfo);
 
     if (res.data.upsertedId) {
-      swalAlert('success', 'User added to the database')
+      swalAlert('success', 'User added to the database');
     }
 
     if (res.data.modifiedCount) {
@@ -40,17 +39,17 @@ export const updateProfileInfo = async (updatedInfo, email) => {
   }
 };
 
-// post publisher info
-export const postPublisherInfo = async (publisherData) => {
+// post lesson info
+export const postLessonInfo = async (lessonData) => {
   try {
-    //console.log(publisherData)
+    //console.log(lessonData)
 
-    const res = await axiosApi.post('/publishers', publisherData);
+    const res = await axiosApi.post('/lessons', lessonData);
 
     //console.log(res)
 
     if (res.data.insertedId) {
-      swalAlert('success', 'Publisher created successfully');
+      swalAlert('success', 'lesson created successfully');
     }
   } catch (error) {
     console.error(error);

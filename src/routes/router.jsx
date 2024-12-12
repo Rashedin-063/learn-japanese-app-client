@@ -11,7 +11,8 @@ import Tutorials from './../pages/Tutorials';
 import Courses from './../pages/Courses';
 import AdminRoute from './AdminRoute';
 import DashboardLayout from '../layouts/DashboardLayout';
-import Tash from '../pages/dashboard/Tash';
+import AddLesson from '../pages/dashboard/AddLesson';
+
 
 
 const router = createBrowserRouter([
@@ -76,7 +77,15 @@ const router = createBrowserRouter([
         index: true,
         element: (
           <AdminRoute>
-            <Tash />
+            <Lessons />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: 'add-lessons',
+        element: (
+          <AdminRoute>
+            <AddLesson />
           </AdminRoute>
         ),
       },
