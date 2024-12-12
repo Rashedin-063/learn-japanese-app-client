@@ -199,7 +199,7 @@ const ProfileModal = ({ isOpen, closeModal, userData }) => {
                 <button
                   disabled={loading}
                   type='submit'
-                  className='btn bg-green-heaven text-pure-white hover:bg-amber-glow mt-2'
+                  className='btn bg-green-heaven   hover:bg-amber-glow mt-2'
                 >
                   {loading ? (
                     <ImSpinner9 className='animate-spin m-auto text-amber-glow' />

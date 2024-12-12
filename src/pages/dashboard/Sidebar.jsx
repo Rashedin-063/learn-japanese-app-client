@@ -1,11 +1,16 @@
 import { useState } from 'react';
 
 // icons
-import { GrUserAdmin, GrLogout, GrArticle } from 'react-icons/gr';
+import {
+  GrUserAdmin,
+  GrLogout,
+  GrDocumentConfig,
+  GrDocumentCloud,
+} from 'react-icons/gr';
 import { AiOutlineBars } from 'react-icons/ai';
-import { BsGraphUp } from 'react-icons/bs';
-import { CgProfile } from 'react-icons/cg';
-import { FaAddressCard } from 'react-icons/fa';
+import { MdOutlineArticle } from 'react-icons/md';
+import { FaRegAddressCard, FaUserCog } from 'react-icons/fa';
+import { TbVocabulary } from 'react-icons/tb';
 
 import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -18,7 +23,6 @@ const Sidebar = ({ isActive, handleToggle }) => {
   const navigate = useNavigate();
   const { logOutUser } = useAuth();
 
- 
   const handleLogOut = async () => {
     try {
       await logOutUser();
@@ -33,10 +37,10 @@ const Sidebar = ({ isActive, handleToggle }) => {
   return (
     <>
       {/* Small Screen Navbar */}
-      <div className=' bg-green-heaven text-gray-800 flex justify-between lg:hidden'>
+      <div className=' bg-gray-400 text-gray-800 flex justify-between lg:hidden'>
         <div>
           <div
-            className={`block cursor-pointer p-4 font-bold bg-slate-700  ${
+            className={`block cursor-pointer p-4 font-bold bg-zen-serenity  ${
               isActive && 'hidden'
             }`}
           >
@@ -45,8 +49,8 @@ const Sidebar = ({ isActive, handleToggle }) => {
                 className=' md:block drop-shadow-xl'
                 src={logo}
                 alt='logo'
-                width='140'
-                height='100'
+                width='90'
+                height='60'
               />
             </Link>
           </div>
@@ -54,15 +58,15 @@ const Sidebar = ({ isActive, handleToggle }) => {
 
         <button
           onClick={handleToggle}
-          className='mobile-menu-button p-4 focus:outline-none bg-gray-700 text-gray-100'
+          className='mobile-menu-button py-4 px-10 focus:outline-none bg-zen-serenity text-zen-charcoal'
         >
-          <AiOutlineBars className='h-8 w-8' />
+          <AiOutlineBars className='h-6 w-6' />
         </button>
       </div>
 
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-green-heaven w-64 space-y-6 px-2 py-8  absolute inset-y-0 left-0 transform -translate-x-full
+        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-green-heaven w-64 space-y-6 px-2 py-4  absolute inset-y-0 left-0 transform -translate-x-full
            ${
              isActive && 'translate-x-0'
            }  lg:translate-x-0  transition duration-300 ease-in-out`}
@@ -83,103 +87,138 @@ const Sidebar = ({ isActive, handleToggle }) => {
           </div>
 
           {/* Nav Items */}
-          <div className='flex flex-col justify-between flex-1 mt-6'>
+          <div className='flex flex-col justify-between flex-1 mt-6 text-zen-charcoal'>
             {/*  Menu Items */}
             <nav>
-              {/* Statistics */}
+              {/* Lessons */}
               <NavLink
                 to='/dashboard'
                 end
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform rounded-full hover:bg-deep-ocean   hover:text-pure-white ${
+                  `flex items-center px-3.5 gap-3 py-2 my-3  rounded-full   hover:text-autumn-ember ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-pure-white'
-                      : 'text-faded-pearl'
+                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      : ''
                   }`
                 }
               >
-                <BsGraphUp className='w-5 h-5 text-pure-white' />
+                <MdOutlineArticle size={24} />
 
-                <span className='mx-4 font-medium'>Statistics</span>
+                <span className=' font-medium'>Lessons</span>
               </NavLink>
 
-              {/* All users */}
+              {/* Add Lessons */}
               <NavLink
-                to='all-users'
+                to='add-lessons'
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5 rounded-full  transition-colors duration-300 transform  hover:bg-green-heaven  hover:text-pure-white ${
+                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-pure-white'
-                      : 'text-faded-pearl'
+                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      : ''
                   }`
                 }
               >
-                <CgProfile className='w-5 h-5 text-white' />
+                <FaRegAddressCard className='w-5 h-5 ' />
 
-                <span className='mx-4 font-medium'>All Users</span>
+                <span className='mx-4 font-medium'>Add Lessons</span>
               </NavLink>
 
-              {/* All Articles */}
+              {/* Add Vocabularies */}
               <NavLink
-                to='all-articles-admin'
+                to='add-vocabularies'
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5 rounded-full  transition-colors duration-300 transform  hover:bg-green-heaven  hover:text-pure-white ${
+                  `flex items-center px-3.5 py-2 my-3  rounded-full   hover:text-autumn-ember ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-pure-white'
-                      : 'text-faded-pearl'
+                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      : ''
                   }`
                 }
               >
-                <GrArticle className='w-5 h-5 text-white' />
+                <TbVocabulary size={22} />
 
-                <span className='mx-4 font-medium'>All Articles</span>
+                <span className='mx-4 font-medium'>Add Vocabularies</span>
               </NavLink>
 
-              {/* add publisher */}
+              {/* Manage Users */}
               <NavLink
-                to='add-publisher'
+                to='manage-users'
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5 rounded-full  transition-colors duration-300 transform  hover:bg-green-heaven  hover:text-pure-white ${
+                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-pure-white'
-                      : 'text-faded-pearl'
+                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      : ''
                   }`
                 }
               >
-                <FaAddressCard className='w-5 h-5 text-white' />
+                <FaUserCog className='w-6 h-6 ' />
 
-                <span className='mx-4 font-medium'>Add Publisher</span>
+                <span className='mx-4 font-medium'>Manage Users</span>
+              </NavLink>
+
+              {/* Lesson Management */}
+              <NavLink
+                to='lesson-management'
+                className={({ isActive }) =>
+                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                    isActive
+                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      : ''
+                  }`
+                }
+              >
+                <GrDocumentConfig className='w-5 h-5 font-bold ' />
+
+                <span className='mx-4 font-medium'>Lesson Management</span>
+              </NavLink>
+
+              {/* Vocabulary Management */}
+              <NavLink
+                to='vocabulary-management'
+                className={({ isActive }) =>
+                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                    isActive
+                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      : ''
+                  }`
+                }
+              >
+                <GrDocumentCloud className='w-6 h-6 ' />
+
+                <span className='mx-4 font-medium'>Vocabulary Management</span>
               </NavLink>
             </nav>
           </div>
         </div>
 
         <div>
-          <hr />
+          <div className='bg-zen-charcoal h-[1px] w-11/12 mx-auto'> </div>
 
-          {/* Profile Menu */}
-          <NavLink
-            to='/profile'
-            className={({ isActive }) =>
-              `flex items-center px-4 py-2 my-5 rounded-full  transition-colors duration-300 transform  hover:bg-green-heaven founded-full   hover:text-pure-white ${
-                isActive
-                  ? 'bg-deep-ocean bg-opacity-85  text-pure-white'
-                  : 'text-faded-pearl'
-              }`
-            }
-          >
-            <GrUserAdmin className='w-5 h-5 text-pure-white' />
+          <div className='ml-1'>
+            {/* Profile Menu */}
+            <NavLink
+              to='/profile'
+              className={({ isActive }) =>
+                `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                  isActive
+                    ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                    : ''
+                }`
+              }
+            >
+              <GrUserAdmin className='w-5 h-5  ' />
 
-            <span className='mx-4 font-medium'>Profile</span>
-          </NavLink>
-          <button
-            onClick={handleLogOut}
-            className='flex w-full items-center px-4 py-2 rounded-full mt-5 text-faded-pearl hover:bg-green-heaven founded-full   hover:text-pure-white transition-colors duration-300 transform'
-          >
-            <GrLogout className='w-5 h-5 text-pure-white' />
+              <span className='mx-4 font-medium'>Profile</span>
+            </NavLink>
+            {/* logout btn */}
+            <button
+              onClick={handleLogOut}
+              className='flex w-full items-center px-4 py-2 rounded-full text-faded-pearl text-autumn-ember hover:text-amber-glow'
+            >
+              <GrLogout className='w-5 h-5  ' />
 
-            <span className='mx-4 font-medium'>Logout</span>
-          </button>
+              <span className='mx-4 font-medium'>Logout</span>
+            </button>
+          </div>
         </div>
       </div>
     </>
