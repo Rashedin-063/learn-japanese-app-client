@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import useAuth from '../hooks/useAuth';
 import { Navigate } from 'react-router-dom';
+import useLoadUser from '../hooks/useLoadUser';
 
 const DefaultRoute = () => {
   const { user, loading } = useAuth();
-{user && console.log(user.role)
+    const [userData] = useLoadUser();
+    console.log(userData);
+{user && console.log(userData.role)
 }
   // loading state
-  if (loading) {
+  if (!user && loading) {
     return (
       <div className='text-center flex justify-center items-center min-h-[70vh]'>
         <div className='flex flex-col m-8 rounded shadow-md w-60 sm:w-80 animate-pulse h-96'>

@@ -8,9 +8,6 @@ import useAuth from '../../hooks/useAuth';
 import LoginRegisterTitle from '../../components/LoginRegisterTitle';
 import { ImSpinner9 } from 'react-icons/im';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 import { toast } from 'react-toastify';
 import { createOrUpdateUser } from '../../api/userApi';
 
@@ -117,7 +114,7 @@ const Login = () => {
             Register
           </Link>
         </p>
-        <ToastContainer />
+
       </div>
     </div>
   );

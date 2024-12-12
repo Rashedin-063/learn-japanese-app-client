@@ -3,8 +3,6 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 import { toast } from 'react-toastify';
 import { createOrUpdateUser } from '../../api/userApi';
@@ -93,7 +91,6 @@ const SocialLogin = () => {
           <p className='text-base'>Github Login</p>
         </button>
       </div>
-      <ToastContainer />
     </div>
   );
 };
