@@ -62,9 +62,9 @@ const Register = () => {
       await updateUserProfile(name, image_url);
 
       const userInfo = {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
+        displayName: name,
+        email: email,
+        photoURL: image_url,
         role: 'user',
         status: 'verified',
       };
