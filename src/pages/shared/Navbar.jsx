@@ -149,7 +149,7 @@ navbar end
           )}
 
           {/* theme controller */}
-          <div className='xl:mr-4 outline outline-amber-glow flex justify-center items-center rounded-full md:mt- lg:-mt-2 h-9 w-9  lg:h-10 lg:w-10'>
+          <div className='xl:mr-4  flex justify-center items-center rounded-full md:mt- lg:-mt-2 h-9 w-9  lg:h-10 lg:w-10 bg-transparent'>
             <label className='swap swap-rotate'>
               {/* this hidden checkbox controls the state */}
               <input
@@ -170,7 +170,7 @@ navbar end
 
               {/* moon icon */}
               <svg
-                className='swap-on w-10 h-10 fill-current flex items-center justify-center'
+                className='swap-on w-10 fill-current h-10 flex items-center justify-center '
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
               >
