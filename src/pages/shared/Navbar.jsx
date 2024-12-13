@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`xl:px-2 ${theme?.colors.background} pt-2  -mb- sticky top-0 z-10 shadow-3xl`}
+      className={`xl:px-2 ${theme?.colors.background} pt-2 sticky top-0 z-10 shadow-3xl`}
     >
       <div className='flex justify-between items-center w-full lg:px-2'>
         {/* navbar start */}

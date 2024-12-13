@@ -17,6 +17,7 @@ import ManageUsers from '../pages/dashboard/ManageUsers';
 import LessonManagement from '../pages/dashboard/LessonManagement';
 import VocabularyManagement from '../pages/dashboard/VocabularyManagement';
 import AdminLessons from './../pages/dashboard/Lessons';
+import SingleVocabularyPage from '../pages/SingleVocabularyPage';
 
 
 
@@ -47,6 +48,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Lessons />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/single-vocabulary/:id',
+        element: (
+          <PrivateRoute>
+            <SingleVocabularyPage/>
           </PrivateRoute>
         ),
       },
