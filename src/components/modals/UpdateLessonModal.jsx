@@ -16,7 +16,7 @@ import { axiosApi } from '../../api/axiosApi';
 const UpdateLessonModal = ({ isOpen, closeModal, lessonData, refetch}) => {
   const [loading, setLoading] = useState(false);
   
-  console.log(lessonData)
+  // console.log(lessonData)
   
   
   
@@ -60,7 +60,7 @@ const UpdateLessonModal = ({ isOpen, closeModal, lessonData, refetch}) => {
           <div className='fixed inset-0 bg-black bg-opacity-25' />
         </TransitionChild>
         <div className='fixed inset-0 flex w-screen items-center justify-center p-4'>
-          <DialogPanel className='max-w-lg space-y-4 border bg-green-100 px-4 pb-4 relative  drop-shadow-xl rounded-xl'>
+          <DialogPanel className='space-y-4 border bg-green-100 px-4 pb-4 relative  drop-shadow-xl rounded-xl'>
             {/* close btn */}
             <button
               onClick={closeModal}

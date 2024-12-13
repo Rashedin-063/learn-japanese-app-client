@@ -9,17 +9,17 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { axiosApi } from '../../api/axiosApi';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import UpdateVocabularyModal from '../../components/modals/UpdateVocabularyModal';
 
 const VocabularyManagement = () => {
   const [filter, setFilter] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
+    const [currentId, setCurrentId] = useState(null);
 
   const [vocabularies, refetch, isLoading, isError, error] =
     useLoadVocabularies(filter);
 
-  const handleUpdate = (id) => {
-  console.log(id)
-  
-  }
+
   
  const handleDelete = (id) => {
    Swal.fire({
@@ -47,7 +47,12 @@ const VocabularyManagement = () => {
        }
      }
    });
- };
+  };
+  
+  const closeModal = (id) => {
+    setCurrentId(id);
+    setIsOpen(!isOpen);
+  };
 
 
   // handling loading and error
@@ -105,12 +110,20 @@ const VocabularyManagement = () => {
                   {voc?.LessonNo}
                 </td>
                 <td className='border border-green-heaven text-sm font-semibold text-center'>
-                  <button onClick={() => handleUpdate(voc._id)}>
+                  <button onClick={() => closeModal(voc._id)}>
                     <FaEdit
                       size='20'
                       className='cursor-pointer text-autumn-ember ml-1 hover:scale-125 transition duration-300 ease'
                     />
                   </button>
+                  {isOpen && currentId === voc._id && (
+                    <UpdateVocabularyModal
+                      isOpen={isOpen}
+                      closeModal={closeModal}
+                      vocabularyData={voc}
+                      refetch={refetch}
+                    />
+                  )}
                 </td>
                 <td className='border- border-green-heaven text-xs font-semibold'>
                   <button onClick={() => handleDelete(voc._id)}>

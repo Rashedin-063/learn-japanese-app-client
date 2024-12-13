@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import React, { useState } from 'react';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import { axiosApi } from "../../api/axiosApi";
 import useLoadLessons from "../../hooks/useLoadLessons";
@@ -8,15 +7,13 @@ import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
 import UpdateLessonModal from "../../components/modals/UpdateLessonModal";
+import PageTitle from "../../components/PageTitle";
 
 const Lessons = () => {
   const [isOpen, setIsOpen] = useState(false);
      const [currentId, setCurrentId] = useState(null);
    
 
-  const queryClient = useQueryClient();
-  const [editingLesson, setEditingLesson] = useState(null); // Track lesson being edited
-  const [lessonForm, setLessonForm] = useState({ name: '', number: '' }); // Form data
 
 const [lessons, refetch, isLoading, isError, error] =
   useLoadLessons();
@@ -63,7 +60,7 @@ const [lessons, refetch, isLoading, isError, error] =
       <Helmet>
         <title>Learn Japanese || Admin - Lessons</title>
       </Helmet>
-      <h1>Lessons</h1>
+    <PageTitle title='Manage Lessons'/>
       <table className='table table-sm xl:table-md w-full border border-green-heaven lg:w-3/4 mx-auto mt-8'>
         <thead>
           <tr className=' border-b-2 border-green-heaven text-base text-slate-800 text-center'>
@@ -118,45 +115,6 @@ const [lessons, refetch, isLoading, isError, error] =
           ))}
         </tbody>
       </table>
-
-      {/* Edit form */}
-      {editingLesson && (
-        <div>
-          <h2>Edit Lesson</h2>
-          <form onSubmit={handleEditSubmit}>
-            <div>
-              <label>
-                Lesson Name:
-                <input
-                  type='text'
-                  value={lessonForm.name}
-                  onChange={(e) =>
-                    setLessonForm({ ...lessonForm, name: e.target.value })
-                  }
-                  required
-                />
-              </label>
-            </div>
-            <div>
-              <label>
-                Lesson Number:
-                <input
-                  type='number'
-                  value={lessonForm.number}
-                  onChange={(e) =>
-                    setLessonForm({ ...lessonForm, number: e.target.value })
-                  }
-                  required
-                />
-              </label>
-            </div>
-            <button type='submit'>Save Changes</button>
-            <button type='button' onClick={() => setEditingLesson(null)}>
-              Cancel
-            </button>
-          </form>
-        </div>
-      )}
     </div>
   );
 };
