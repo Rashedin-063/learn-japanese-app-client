@@ -7,8 +7,13 @@ import useLoadLessons from "../../hooks/useLoadLessons";
 import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
+import UpdateLessonModal from "../../components/modals/UpdateLessonModal";
 
 const Lessons = () => {
+  const [isOpen, setIsOpen] = useState(false);
+     const [currentId, setCurrentId] = useState(null);
+   
+
   const queryClient = useQueryClient();
   const [editingLesson, setEditingLesson] = useState(null); // Track lesson being edited
   const [lessonForm, setLessonForm] = useState({ name: '', number: '' }); // Form data
@@ -42,22 +47,13 @@ const [lessons, refetch, isLoading, isError, error] =
        }
      }
    });
- };
-
-  // Handle edit form submission
-  const handleEditSubmit = (e) => {
-    e.preventDefault();
-    updateLessonMutation.mutate({ id: editingLesson.id, ...lessonForm });
   };
+  
+   const closeModal = (id) => {
+     setCurrentId(id);
+     setIsOpen(!isOpen);
+   };
 
-  // Handle delete action
-
-
-  // Handle lesson edit action
-  const handleEditClick = (lesson) => {
-    setEditingLesson(lesson);
-    setLessonForm({ name: lesson.name, number: lesson.number });
-  };
 
   if (isLoading) return <p>Loading lessons...</p>;
   if (isError) return <p>Error fetching lessons.</p>;
@@ -80,7 +76,10 @@ const [lessons, refetch, isLoading, isError, error] =
         </thead>
         <tbody>
           {lessons.map((lesson) => (
-            <tr className='border-b border-green-heaven text-center' key={lesson._id}>
+            <tr
+              className='border-b border-green-heaven text-center'
+              key={lesson._id}
+            >
               <td className='border border-green-heaven text-sm font-semibold'>
                 {lesson?.lessonName}
               </td>
@@ -91,12 +90,21 @@ const [lessons, refetch, isLoading, isError, error] =
                 {lesson.vocabularyCount}
               </td>
               <td className='border border-green-heaven text-sm font-semibold text-center'>
-                <button onClick={() => handleUpdate(lesson._id)}>
+                <button onClick={() => closeModal(lesson._id)}>
                   <FaEdit
                     size='20'
                     className='cursor-pointer text-autumn-ember ml-1 hover:scale-125 transition duration-300 ease'
                   />
                 </button>
+                {isOpen && currentId === lesson._id && (
+                  <UpdateLessonModal
+                    isOpen={isOpen}
+                    closeModal={closeModal}
+                    lessonData={lesson}
+                    refetch={refetch}
+
+                  />
+                )}
               </td>
               <td className='border- border-green-heaven text-xs font-semibold'>
                 <button onClick={() => handleDelete(lesson._id)}>
