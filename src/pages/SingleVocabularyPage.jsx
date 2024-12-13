@@ -16,13 +16,13 @@ const Button = ({
   className = '',
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2';
+    'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium  transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-700 h-10 px-4 py-2 w-36';
 
   const variants = {
-    default: 'bg-primary text-white hover:bg-primary/90',
+    default: 'bg-autumn-ember text-white hover:bg-amber-glow',
     outline:
-      'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-    green: 'bg-green-600 text-white hover:bg-green-700',
+      'border border-input bg-amber-glow text-white hover:bg-autumn-ember',
+    green: 'bg-green-heaven text-white hover:bg-green-700',
   };
 
   return (
@@ -48,7 +48,7 @@ const Card = ({ children, className = '' }) => {
 
 const Toast = ({ message, onClose }) => {
   useEffect(() => {
-    const timer = setTimeout(onClose, 3000);
+    const timer = setTimeout(onClose, 4000);
     return () => clearTimeout(timer);
   }, [onClose]);
 
@@ -62,12 +62,13 @@ const Toast = ({ message, onClose }) => {
 };
 
 const SingleVocabularyPage = () => {
-  const  lessonId  = useParams();
+  const { lessonNumber } = useParams();
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showToast, setShowToast] = useState(false);
-   const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('');
+  const [disabled, setDisabled] = useState(false)
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -90,12 +91,18 @@ const [vocabularies, refetch, isLoading, isError, error] =
   if (isLoading) return <LoadingSpinner />;
   if (isError) return <ErrorMessage error={error} />;
 
-  // const selectedVocabularies = vocabularies?.filter(voc => { voc._id = lessonId.id })
-  // console.log(lessonId.id, selectedVocabularies);
+ const selectedVocabularies = vocabularies?.filter(
+   (voc) => {
+     return voc.LessonNo === parseInt(lessonNumber);
+   }
+ );
+  
   
 
-  const currentWord = vocabularies[currentIndex];
-  const isLastWord = currentIndex === vocabularies.length - 1;
+  const currentWord = selectedVocabularies[currentIndex];
+
+  
+  const isLastWord = currentIndex === selectedVocabularies.length - 1;
 
   const playPronunciation = () => {
     const utterance = new SpeechSynthesisUtterance(currentWord.Word);
@@ -104,14 +111,16 @@ const [vocabularies, refetch, isLoading, isError, error] =
   };
 
   const handleNext = () => {
-    if (currentIndex < vocabularies.length - 1) {
+    if (currentIndex < selectedVocabularies.length - 1) {
       setCurrentIndex((prev) => prev + 1);
+      setDisabled(true);
     }
   };
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
+      setDisabled(true);
     }
   };
 
@@ -121,7 +130,7 @@ const [vocabularies, refetch, isLoading, isError, error] =
     setTimeout(() => {
       setShowConfetti(false);
       navigate('/lessons');
-    }, 3000);
+    }, 4000);
   };
 
   return (
@@ -144,7 +153,7 @@ const [vocabularies, refetch, isLoading, isError, error] =
         />
       )}
 
-      <Card className='max-w-2xl mx-auto animate-fade-in'>
+      <Card className='max-w-2xl mx-auto bg-gradient-to-br from-green-heaven/30 via-green-heaven/20 to-green-heaven/10 animate-fade-in border border-b-4 border-r-4 border-gray-400 shadow-lg hover:scale-[0.98] hover:brightness-105 transition-all duration-300 ease'>
         <div className='space-y-6'>
           <div className='cursor-pointer hover:scale-105 transition-transform'>
             <h2 className='text-3xl font-bold text-center mb-2'>
@@ -155,19 +164,19 @@ const [vocabularies, refetch, isLoading, isError, error] =
                 {currentWord.Pronunciation}
               </p>
               <div onClick={playPronunciation}>
-                <HiMiniSpeakerWave size={24}/>
+                <HiMiniSpeakerWave size={24} />
               </div>
             </div>
           </div>
 
           <div className='space-y-4'>
             <div>
-              <h3 className='font-semibold text-lg'>When to Say:</h3>
-              <p className='text-gray-600'>{currentWord.WhenToSay}</p>
-            </div>
-            <div>
               <h3 className='font-semibold text-lg'>Meaning:</h3>
               <p className='text-gray-600'>{currentWord.Meaning}</p>
+            </div>
+            <div>
+              <h3 className='font-semibold text-lg'>When to Say:</h3>
+              <p className='text-gray-600'>{currentWord.WhenToSay}</p>
             </div>
             {/* <div>
               <h3 className='font-semibold text-lg'>Example:</h3>
@@ -195,8 +204,8 @@ const [vocabularies, refetch, isLoading, isError, error] =
         </div>
       </Card>
 
-      <div className='mt-4 text-center text-gray-600'>
-        Word {currentIndex + 1} of {vocabularies.length}
+      <div className='mt-8 text-center text-2xl font-yujiMai text-zen-charcoal'>
+        Word {currentIndex + 1} of {selectedVocabularies.length}
       </div>
     </div>
   );

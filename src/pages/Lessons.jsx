@@ -24,8 +24,8 @@ const Lessons = () => {
         {lessons?.map((lesson) => (
           <div
             key={lesson._id}
-            className='group rounded-xl border bg-gradient-to-br from-blossom-haze via-zen-serenity to-white border-slate-300 drop-shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 
-                     hover:border-slate-400 animate-fade-in border-b-4 border-r-4 '
+            className='group rounded-xl border bg-gradient-to-br from-blossom-haze via-rose-50 to-white border-slate-400 drop-shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 
+                     hover:border-slate-500 animate-fade-in border-b-4 border-r-4 '
           >
             <div className='flex flex-col space-y-1 p-6 relative overflow-hidden'>
               <div
@@ -50,7 +50,10 @@ const Lessons = () => {
             </div>
 
             <div className='flex items-center p-6 pt-0'>
-              <Link to={`/single-vocabulary/${lesson._id}`} className='w-full'>
+              <Link
+                to={`/single-vocabulary/${lesson.lessonNumber}`}
+                className='w-full'
+              >
                 <button
                   className='w-full inline-flex items-center justify-center gap-2 
                            bg-green-heaven text-white py-3 px-4 rounded-md

@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/single-vocabulary/:id',
+        path: '/single-vocabulary/:lessonNumber',
         element: (
           <PrivateRoute>
             <SingleVocabularyPage/>
