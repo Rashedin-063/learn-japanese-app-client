@@ -8,7 +8,7 @@ import Zoom from '@mui/material/Zoom';
 import { toast } from 'react-toastify';
 import logo from '../../assets/logo.png';
 import useLoadUser from '../../hooks/useLoadUser';
-import bg from '../../assets/bg.jpg';
+import bg from '../../assets/bg2.jpg';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
