@@ -1,7 +1,7 @@
 const Home = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <span className='loading loading-dots loading-md ml-4'></span>
+    <div className="text-center pt-40 text-2xl md:text-3xl xl:text-4xl font-playwrite font-semibold">
+     Welcome to Learn Japanese
     </div>
   );
 }

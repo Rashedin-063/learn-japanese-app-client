@@ -6,7 +6,6 @@ import Login from '../pages/auth/Login';
 import Register from './../pages/auth/Register';
 import PrivateRoute from './PrivateRoute';
 import Lessons from '../pages/Lessons';
-import DefaultRoute from './DefaultRoute';
 import Tutorials from './../pages/Tutorials';
 import Courses from './../pages/Courses';
 import AdminRoute from './AdminRoute';
@@ -29,10 +28,8 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <DefaultRoute>
+        element: (        
             <Home />
-          </DefaultRoute>
         ),
       },
       {

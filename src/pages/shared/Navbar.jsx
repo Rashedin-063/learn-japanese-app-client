@@ -8,6 +8,7 @@ import Zoom from '@mui/material/Zoom';
 import { toast } from 'react-toastify';
 import logo from '../../assets/logo.png';
 import useLoadUser from '../../hooks/useLoadUser';
+import bg from '../../assets/bg.jpg';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -46,6 +47,10 @@ const Navbar = () => {
   return (
     <div
       className={`xl:px-2 ${theme?.colors.background} pt-2 sticky top-0 z-10 shadow-3xl`}
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundPosition: 'center',
+      }}
     >
       <div className='flex justify-between items-center w-full lg:px-2'>
         {/* navbar start */}
