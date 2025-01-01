@@ -45,13 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      className={`xl:px-2 ${theme?.colors.background} pt-2 sticky top-0 z-10 shadow-3xl`}
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundPosition: 'center',
-      }}
-    >
+    <div className={`xl:px-2  pt-2 sticky top-0 z-10 shadow-3xl `}>
       <div className='flex justify-between items-center w-full lg:px-2'>
         {/* navbar start */}
         <div className='flex lg:-mt-2'>
@@ -154,19 +148,19 @@ navbar end
           )}
 
           {/* theme controller */}
-          <div className='xl:mr-4  flex justify-center items-center rounded-full md:mt- lg:-mt-2 h-9 w-9  lg:h-10 lg:w-10 bg-transparent'>
+          <div className='xl:mr-4  flex justify-center items-center rounded-full md:mt- lg:-mt-2 h-9 w-9  lg:h-10 lg:w-10 !bg-transparent'>
             <label className='swap swap-rotate'>
               {/* this hidden checkbox controls the state */}
               <input
                 onChange={handleTheme}
                 type='checkbox'
-                className='theme-controller'
+                className='theme-controller border-2 rounded-full border-green-heaven !bg-transparent'
               />
 
               {/* sun icon */}
               <svg
                 className='swap-off
-                h-10 w-10 fill-current flex justify-center items-center'
+                h-11 w-11 fill-current flex justify-center items-center'
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
               >
@@ -175,7 +169,7 @@ navbar end
 
               {/* moon icon */}
               <svg
-                className='swap-on w-10 fill-current h-10 flex items-center justify-center '
+                className='swap-on w-11 h-11 fill-current flex items-center justify-center '
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
               >
@@ -187,9 +181,9 @@ navbar end
       </div>
 
       {/* border */}
-      <div className='border-[1px] border-gray-900 w-[89%] md:w-[90%] xl:w-[95%] mx-auto  border-opacity-45 mb-[1.5px] rounded-lg'></div>
-      <div className='border-[1px] border-gray-900 w-[92%] md:w-[95%] xl:w-full mx-auto border-opacity-45'></div>
-      <div className='border-[1px] border-gray-900 w-[89%] md:w-[90%] xl:w-[95%] mx-auto  border-opacity-45 mt-[1.4px] rounded-lg'></div>
+      <div className='border-[1px] border-black w-[75%] md:w-[80%] xl:w-[85%] mx-auto  border-opacity-45 mb-[1.5px] rounded-lg md:-mt-4'></div>
+      <div className='border-[1px] border-black w-[92%] md:w-[95%] xl:w-full mx-auto border-opacity-45'></div>
+      <div className='border-[1px] border-black w-[75%] md:w-[80%] xl:w-[85%] mx-auto  border-opacity-45 mt-[1.4px] rounded-lg'></div>
     </div>
   );
 };

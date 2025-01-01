@@ -19,6 +19,8 @@ const Root = () => {
       style={{
         backgroundImage: `url(${bg})`,
         backgroundPosition: 'center',
+        backgroundBlendMode: 'multiply',
+        backgroundAttachment: 'fixed',
       }}
     >
       <div

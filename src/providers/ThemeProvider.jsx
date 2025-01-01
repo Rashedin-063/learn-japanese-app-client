@@ -9,14 +9,14 @@ const themes = {
     colors: {
       primary: 'text-amber-glow',
       background: 'bg-zen-serenity',
-      textPrimary: 'text-autumn-ember',
+      textPrimary: 'text-green-heaven',
     },
   },
   dark: {
     colors: {
       primary: 'text-green-heaven',
       background: 'bg-blossom-haze',
-      textPrimary: 'text-crimson-gate',
+      textPrimary: 'text-zen-charcoal',
     },
   },
 };

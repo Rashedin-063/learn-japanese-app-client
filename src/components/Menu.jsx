@@ -8,7 +8,7 @@ const Menu = ({ filteredItems = [] }) => {
   return (
  
       <ul
-        className={`lg:flex lg:justify-end lg:items-center lg:space-x-6 xl:space-x-12 lg:text-lg space-y-4 px-1  lg:space-y-0 font-yujiMai   ${theme?.colors.primary} font-semibold`}
+        className={`lg:flex lg:justify-end lg:items-center lg:space-x-6 xl:space-x-12 lg:text-lg space-y-4 px-1  lg:space-y-0 font-yujiMai   ${theme?.colors.textPrimary} font-semibold`}
       >
         {filteredItems.map(({ to, label }) => (
           <li key={to}>
