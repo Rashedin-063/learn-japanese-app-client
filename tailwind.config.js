@@ -12,7 +12,7 @@ export default {
         'zen-serenity': '#E0DBD6',
         'blossom-haze': '#FED6FC',
         'amber-glow': '#FE9230',
-        'green-heaven': '#307425',
+        'green-heaven': '#034003',
         'autumn-ember': '#993300',
         'crimson-gate': '#ff0066',
         'zen-charcoal': '#1C1C1C',
