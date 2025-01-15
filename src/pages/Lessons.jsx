@@ -25,22 +25,22 @@ const Lessons = () => {
         {lessons?.map((lesson) => (
           <div
             key={lesson._id}
-            className='group rounded-xl border bg-gradient-to-br from-blossom-haze via-rose-50 to-white border-slate-400 drop-shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 
-                     hover:border-slate-500 animate-fade-in border-b-4 border-r-4 '
+            className='group rounded-xl border  border-green-heaven drop-shadow-2xl transition-translate duration-500 ease-out hover:-translate-y-2 
+                     hover:border-green-700 animate-fade-in border-b-4 border-r-4 '
             style={{
-                    backgroundImage: `url(${bg})`,
-                    backgroundPosition: 'top',
-                    backgroundBlendMode: 'overlay',
-                   
-                  }}
+              backgroundImage: `url(${bg})`,
+              backgroundPosition: 'top',
+              backgroundBlendMode: 'overlay',
+              backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            }}
           >
             <div className='flex flex-col space-y-1 p-6 relative overflow-hidden'>
               <div
-                className='w-12 h-12 bg-green-heaven/10 rounded-full flex items-center justify-center 
+                className='w-12 h-12 bg-amber-glow/50 rounded-full flex items-center justify-center 
                           group-hover:scale-110 transition-all duration-500 ease-out
                           group-hover:bg-green-heaven/20 group-hover:translate-x-2'
               >
-                <GiOpenBook className='w-6 h-6 text-green-heaven rotate-12' />
+                <GiOpenBook className='w-6 h-6 text-crimson-gate rotate-12' />
               </div>
             </div>
 
