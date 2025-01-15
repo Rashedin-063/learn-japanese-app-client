@@ -5,6 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import PageTitle from "../components/PageTitle";
 import { Link } from 'react-router-dom';
 import { GiOpenBook } from 'react-icons/gi';
+import bg from '../assets/bg2.avif';
 
 const Lessons = () => {
 
@@ -26,6 +27,12 @@ const Lessons = () => {
             key={lesson._id}
             className='group rounded-xl border bg-gradient-to-br from-blossom-haze via-rose-50 to-white border-slate-400 drop-shadow-2xl transition-all duration-500 ease-out hover:-translate-y-2 
                      hover:border-slate-500 animate-fade-in border-b-4 border-r-4 '
+            style={{
+                    backgroundImage: `url(${bg})`,
+                    backgroundPosition: 'top',
+                    backgroundBlendMode: 'multiply',
+                    backgroundAttachment: 'fixed',
+                  }}
           >
             <div className='flex flex-col space-y-1 p-6 relative overflow-hidden'>
               <div
