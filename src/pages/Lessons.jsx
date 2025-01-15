@@ -30,8 +30,8 @@ const Lessons = () => {
             style={{
                     backgroundImage: `url(${bg})`,
                     backgroundPosition: 'top',
-                    backgroundBlendMode: 'multiply',
-                    backgroundAttachment: 'fixed',
+                    backgroundBlendMode: 'overlay',
+                   
                   }}
           >
             <div className='flex flex-col space-y-1 p-6 relative overflow-hidden'>
