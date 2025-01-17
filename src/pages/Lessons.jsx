@@ -72,7 +72,7 @@ const Lessons = () => {
                           '
                 >
                   Start Lesson
-                  {/* <FaHourglassStart className='w-4 h-4' /> */}
+                  <FaHourglassStart className='w-4 h-4' />
                 </button>
               </Link>
             </div>
