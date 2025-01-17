@@ -5,7 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import PageTitle from "../components/PageTitle";
 import { Link } from 'react-router-dom';
 import { GiOpenBook } from 'react-icons/gi';
-import bg from '../assets/bg2.avif';
+import bg from '../assets/sc2.jpg';
 
 const Lessons = () => {
 
@@ -25,13 +25,13 @@ const Lessons = () => {
         {lessons?.map((lesson) => (
           <div
             key={lesson._id}
-            className='group rounded-xl border  border-green-heaven drop-shadow-2xl transition-translate duration-500 ease-out hover:-translate-y-2 
-                     hover:border-green-700 animate-fade-in border-b-4 border-r-4 '
+            className='group rounded-xl border-2 border-amber-glow drop-shadow-2xl transition-translate duration-500 ease-out hover:-translate-y-2 
+                     hover:border-green-700 animate-fade-in border-b-[6px] border-r-[6px]'
             style={{
               backgroundImage: `url(${bg})`,
               backgroundPosition: 'top',
               backgroundBlendMode: 'overlay',
-              backgroundColor: 'rgba(0, 0, 0, 0.2)',
+              backgroundColor: 'rgba(0, 0, 0, 0.1)',
             }}
           >
             <div className='flex flex-col space-y-1 p-6 relative overflow-hidden'>
@@ -51,7 +51,7 @@ const Lessons = () => {
               >
                 {lesson.lessonName}
               </h3>
-              <p className=' transition-all duration-300  group-hover:translate-x-2'>
+              <p className=' transition-all duration-300  group-hover:translate-x-2 text-lg font-semibold opacity-75'>
                 Lesson {lesson.lessonNumber}
               </p>
             </div>
