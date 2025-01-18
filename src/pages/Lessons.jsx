@@ -22,6 +22,7 @@ const Lessons = () => {
       </Helmet>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 '>
+        {lessons ? <>
         {lessons?.map((lesson) => (
           <div
             key={lesson._id}
@@ -78,6 +79,7 @@ const Lessons = () => {
             </div>
           </div>
         ))}
+        </> : ''}
       </div>
     </div>
   );
