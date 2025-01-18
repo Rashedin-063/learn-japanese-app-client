@@ -5,7 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import { Link } from 'react-router-dom';
 import { FaHourglassStart } from 'react-icons/fa';
 import { GiOpenBook } from 'react-icons/gi';
-import bg from '../assets/sc2.jpg';
+import bg from '../assets/flower.avif';
 
 const Lessons = () => {
 
@@ -32,7 +32,7 @@ const Lessons = () => {
               backgroundImage: `url(${bg})`,
               backgroundPosition: 'top',
               backgroundBlendMode: 'overlay',
-              backgroundColor: 'rgba(0, 0, 0, 0.1)',
+              backgroundColor: 'rgba(0, 0, 0, 0.2)',
             }}
           >
             <div className='flex flex-col space-y-1 p-6 relative overflow-hidden'>
