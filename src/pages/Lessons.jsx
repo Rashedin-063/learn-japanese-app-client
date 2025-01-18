@@ -5,7 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import { Link } from 'react-router-dom';
 import { FaHourglassStart } from 'react-icons/fa';
 import { GiOpenBook } from 'react-icons/gi';
-import bg from '../assets/flower.avif';
+import bg from '../assets/flower.jpg';
 
 const Lessons = () => {
 
@@ -30,9 +30,9 @@ const Lessons = () => {
                      hover:border-amber-glow/80 animate-fade-in border-b-[6px] border-r-[6px] relative h-60 '
             style={{
               backgroundImage: `url(${bg})`,
-              backgroundPosition: 'top',
+              backgroundPosition: 'top left',
               backgroundBlendMode: 'overlay',
-              backgroundColor: 'rgba(0, 0, 0, 0.2)',
+              backgroundColor: 'rgba(0, 0, 0, 0.3)',
             }}
           >
             <div className='flex flex-col space-y-1 p-6 relative overflow-hidden'>
@@ -48,7 +48,7 @@ const Lessons = () => {
             <div className='p-6 pt-0'>
               <h3
                 className='text-2xl font-bold transform transition-translate duration-300
-                         group-hover:translate-x-2'
+                         group-hover:translate-x-2 text-autumn-ember'
               >
                 {lesson.lessonName}
               </h3>
