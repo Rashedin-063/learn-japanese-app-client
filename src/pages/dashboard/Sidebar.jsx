@@ -66,7 +66,7 @@ const Sidebar = ({ isActive, handleToggle }) => {
 
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-green-heaven w-64 space-y-6 px-2 py-4  absolute inset-y-0 left-0 transform -translate-x-full
+        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-green-heaven text-zen-serenity w-64 space-y-6 px-2 py-4  absolute inset-y-0 left-0 transform -translate-x-full
            ${
              isActive && 'translate-x-0'
            }  lg:translate-x-0  transition duration-300 ease-in-out`}
@@ -87,7 +87,7 @@ const Sidebar = ({ isActive, handleToggle }) => {
           </div>
 
           {/* Nav Items */}
-          <div className='flex flex-col justify-between flex-1 mt-6 text-zen-charcoal'>
+          <div className='flex flex-col justify-between items-center flex-1 mt-6 '>
             {/*  Menu Items */}
             <nav>
               {/* Lessons */}
@@ -95,9 +95,9 @@ const Sidebar = ({ isActive, handleToggle }) => {
                 to='/dashboard'
                 end
                 className={({ isActive }) =>
-                  `flex items-center px-3.5 gap-3 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                  `flex items-center px-3.5 gap-3 py-2 my-3   hover:text-white    w-[200px] mx-auto ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
                       : ''
                   }`
                 }
@@ -111,9 +111,9 @@ const Sidebar = ({ isActive, handleToggle }) => {
               <NavLink
                 to='add-lessons'
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                  `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
                       : ''
                   }`
                 }
@@ -127,9 +127,9 @@ const Sidebar = ({ isActive, handleToggle }) => {
               <NavLink
                 to='add-vocabularies'
                 className={({ isActive }) =>
-                  `flex items-center px-3.5 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                  `flex items-center px-3.5 py-2 my-3   hover:text-white    w-[200px] ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
                       : ''
                   }`
                 }
@@ -143,9 +143,9 @@ const Sidebar = ({ isActive, handleToggle }) => {
               <NavLink
                 to='manage-users'
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                  `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
                       : ''
                   }`
                 }
@@ -159,9 +159,9 @@ const Sidebar = ({ isActive, handleToggle }) => {
               <NavLink
                 to='lesson-management'
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                  `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
                       : ''
                   }`
                 }
@@ -175,9 +175,9 @@ const Sidebar = ({ isActive, handleToggle }) => {
               <NavLink
                 to='vocabulary-management'
                 className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                  `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
                     isActive
-                      ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
                       : ''
                   }`
                 }
@@ -198,9 +198,9 @@ const Sidebar = ({ isActive, handleToggle }) => {
             <NavLink
               to='/profile'
               className={({ isActive }) =>
-                `flex items-center px-4 py-2 my-3  rounded-full   hover:text-autumn-ember ${
+                `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
                   isActive
-                    ? 'bg-deep-ocean bg-opacity-85  text-zen-serenity'
+                    ? '   bg-amber-glow rounded-lg  text-zen-serenity'
                     : ''
                 }`
               }
@@ -212,7 +212,7 @@ const Sidebar = ({ isActive, handleToggle }) => {
             {/* logout btn */}
             <button
               onClick={handleLogOut}
-              className='flex w-full items-center px-4 py-2 rounded-full text-faded-pearl text-autumn-ember hover:text-amber-glow'
+              className='flex w-full items-center px-4 py-2  text-faded-pearl text-autumn-ember hover:text-amber-glow'
             >
               <GrLogout className='w-5 h-5  ' />
 
