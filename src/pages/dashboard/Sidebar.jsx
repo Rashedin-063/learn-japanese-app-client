@@ -73,7 +73,7 @@ const Sidebar = ({ isActive, handleToggle }) => {
       >
         <div>
           <div>
-            <div className='w-full px-4 py-2 shadow-lg rounded-lg  flex justify-center items-center bg-zen-serenity z-50'>
+            <div className='w-full px-4 py-2 shadow-lg rounded-lg  flex justify-center items-center bg-white z-50'>
               <Link to='/lessons'>
                 <img
                   src={logo}
