@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import PageTitle from './../components/PageTitle';
 
 const Tutorials = () => {
   const tutorials = [
@@ -53,7 +52,7 @@ const Tutorials = () => {
       </Helmet>
       <div className='container mx-auto px-4 py-8'>
 
-        <PageTitle title='Japanese Language Tutorials'/>
+        {/* <PageTitle title='Japanese Language Tutorials'/> */}
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-6'>
           {tutorials.map((tutorial) => (
             <div
