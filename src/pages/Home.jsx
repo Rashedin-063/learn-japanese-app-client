@@ -79,13 +79,7 @@ const Home = () => {
           />
           <button
             type='submit'
-            style={{
-              padding: '10px 20px',
-              background: '#007bff',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '4px',
-            }}
+            className="py-2 px-5 bg-green-heaven rounded-lg text-zen-serenity hover:bg-green-800"
           >
             Submit
           </button>
