@@ -32,39 +32,38 @@ const AddLesson = () => {
   return (
     <div
       onClick={isActive ? handleToggle : undefined}
-      className='mt- lg:mt-8 overflow-x-auto'
+      className='mt- lg:mt-8 overflow-x-auto min-h-screen flex justify-center items-center'
     >
       <Helmet>
         <title>Learn Japanese || Add Lesson</title>
       </Helmet>
 
       <div className='md:mx-4 lg:w-5/6 xl:w-2/3 lg:mx-auto md:p-8 lg:p-12 rounded-xl'>
-        <PageTitle title='Add Lessons' />
         <form
           onSubmit={handleAddLesson}
-          className='space-y-2 bg-green-heaven p-4 md:p-16 lg:p-6 xl:p-16 bg-opacity-10 rounded-3xl drop-shadow-2xl mt-8'
+          className='space-y-4 bg-green-heaven/30 p-4 md:p-16 lg:p-6 xl:p-16  rounded-3xl drop-shadow-2xl mt-8 '
         >
           <div className='form-control'>
-            <label htmlFor='lessonName' className='font-medium'>
+            <label htmlFor='lessonName' className='font-medium mb-1'>
               Lesson Name
             </label>
             <input
               type='text'
               id='lessonName'
               name='lessonName'
-              placeholder='Lesson Name'
+              placeholder='Enter Lesson Name'
               required
               className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
             />
           </div>
 
-          <div className='py-1 rounded-md'>
-            <label htmlFor='lessonNumber' className='font-medium'>
+          <div className='form-control'>
+            <label htmlFor='lessonNumber' className='font-medium mb-1'>
               Lesson Number
             </label>
             <input
               type='number'
-              placeholder='Lesson Number'
+              placeholder='Enter Lesson Number'
               required
               className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500'
               name='lessonNumber'
@@ -76,7 +75,7 @@ const AddLesson = () => {
             <button
               disabled={loading}
               type='submit'
-              className='btn bg-green-heaven text-white hover:bg-green-600 mt-2'
+              className='btn bg-green-heaven text-white hover:bg-green-800 mt-2 border-none'
             >
               {loading ? (
                 <ImSpinner9 className='animate-spin m-auto text-white' />
