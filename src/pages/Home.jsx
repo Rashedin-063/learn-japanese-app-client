@@ -40,30 +40,16 @@ const Home = () => {
         <h1 className=' text-3xl md:text-4xl xl:text-5xl  font-semibold '>
           Welcome to Learn Japanese
         </h1>
-        <p className='text-xl md:text-2xl lg:text-2xl'>
+        <p className=' md:text-md lg:text-lg'>
           One word at a time, immerse yourself in the language of the Land of
-          the Rising Sun.
+          the Rising Sun
         </p>
       </div>
 
       {/* chat with ai */}
-      <div
-        style={{
-          margin: '20px',
-          padding: '20px',
-          border: '1px solid #ddd',
-          borderRadius: '8px',
-        }}
-      >
+      <div className="min-w-xl border border-green-heaven mt-8 p-8 rounded-lg text-center">
         <h3>Chat with AI to Learn Japanese</h3>
-        <div
-          style={{
-            maxHeight: '300px',
-            overflowY: 'auto',
-            marginBottom: '10px',
-            border: '1px solid #ddd',
-            padding: '10px',
-          }}
+        <div className="overflow-y-auto mb-2 p-3 border border-green-heaven/50 my-4"
         >
           {messages.map((msg, index) => (
             <div
@@ -83,7 +69,7 @@ const Home = () => {
             type='text'
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder='Ask me in Japanese...'
+            placeholder='Ask me...'
             style={{
               flex: 1,
               padding: '10px',
