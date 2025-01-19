@@ -70,8 +70,7 @@ const Lessons = () => {
                            before:absolute before:inset-0 
                            before:bg-white/20 before:translate-x-[-150%] before:skew-x-[45deg]
                            before:transition-transform before:duration-500
-                           hover:before:translate-x-[150%]
-                          '
+                           hover:before:translate-x-[150%]'
                     >
                       Start Lesson
                       <FaHourglassStart className='w-4 h-4' />

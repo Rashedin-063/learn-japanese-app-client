@@ -35,7 +35,7 @@ const Home = () => {
         loading ? '' : 'opacity-0 translate-y-[-100%]'
       } transition-all duration-300 ease-in-out`}
     >
-      <h1 className='text-center pt-60 text-2xl md:text-3xl xl:text-4xl font-playwrite font-semibold '>
+      <h1 className='text-center pt-60 text-3xl md:text-4xl xl:text-5xl  font-semibold '>
         Welcome to Learn Japanese
       </h1>
     </div>

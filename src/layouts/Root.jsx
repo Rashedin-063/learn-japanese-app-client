@@ -24,7 +24,7 @@ const Root = () => {
       }}
     >
       <div
-        className={`max-w-7xl mx-auto lg:px-4 font-poppins ${theme?.colors?.textPrimary} min-h-[86vh] pb-8`}
+        className={`max-w-7xl mx-auto lg:px-4 font-rockNroll ${theme?.colors?.textPrimary} min-h-[86vh] pb-8`}
       >
         {noHeaderFooter || <Navbar />}
         <Outlet />

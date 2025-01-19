@@ -6,6 +6,7 @@ export default {
       poppins: "'Poppins', sans-serif",
       yujiMai: "'Yuji Mai', serif",
       playwrite: "'Playwrite HU', cursive",
+      rockNroll: "'RocknRoll One', serif"
     },
     extend: {
       colors: {
