@@ -8,7 +8,7 @@ const Menu = ({ filteredItems = [] }) => {
   return (
  
       <ul
-        className={`lg:flex lg:justify-end lg:items-center lg:space-x-6 xl:space-x-12 lg:text-lg space-y-4 px-1  lg:space-y-0 font-yujiMai   ${theme?.colors.textPrimary} font-semibold`}
+        className={`lg:flex lg:justify-end lg:items-center lg:space-x-6 xl:space-x-12 lg:text-lg space-y-4 px-1  lg:space-y-0    ${theme?.colors.textPrimary}`}
       >
         {filteredItems.map(({ to, label }) => (
           <li key={to}>
@@ -16,7 +16,7 @@ const Menu = ({ filteredItems = [] }) => {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? 'border border-b-4 border-r-4 border-zen-charcoal px-4  pb-1 rounded-xl hover:border-amber-glow font-semibold'
+                  ? 'border border-b-4 border-r-4  px-4 pb-1 rounded-xl  border-green-heaven font-semibold'
                   : 'px-4 lg:text-lg hover:border-b-2 pb-1 rounded-xl border-zen-charcoal'
               }
             >

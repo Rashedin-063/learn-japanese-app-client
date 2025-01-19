@@ -17,6 +17,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const items = [
+    { to: '/', label: 'Home' },
     { to: '/lessons', label: 'Lessons' },
     { to: '/tutorials', label: 'Tutorials' },
     { to: '/courses', label: 'Courses' },
