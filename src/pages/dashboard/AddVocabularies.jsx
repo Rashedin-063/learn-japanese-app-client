@@ -1,14 +1,15 @@
 import { Helmet } from 'react-helmet-async';
-
 import React, { useState } from 'react';
-import PageTitle from './../../components/PageTitle';
 import useAuth from '../../hooks/useAuth';
 import { ImSpinner9 } from 'react-icons/im';
 import { postVocabularyInfo } from '../../api/userApi';
+import { useNavigate } from 'react-router-dom';
 
 const AddVocabularies = () => {
   const [loading, setLoading] = useState(false);
- const { user, logOutUser } = useAuth();
+  const navigate = useNavigate()
+  const { user } = useAuth();
+  
 
   const handleAddVocabulary = async (e) => {
     e.preventDefault();
@@ -28,6 +29,8 @@ const AddVocabularies = () => {
       setLoading(false);
       // Clear form
       e.target.reset();
+      navigate('/dashboard/vocabulary-management');
+
     } catch (error) {
       console.error(error.message);
     } finally {
@@ -36,16 +39,14 @@ const AddVocabularies = () => {
   };
 
   return (
-    <div className='-mt-8 overflow-x-auto'>
+    <div className='-mt-8 overflow-x-auto min-h-screen flex justify-center items-center'>
       <Helmet>
         <title>Learn Japanese || Add Vocabularies</title>
       </Helmet>
       <div className='md:w-5/6 xl:w-2/3 md:mx-auto rounded-xl'>
-        <PageTitle title={'Add New Vocabulary'} />
-
         <form
           onSubmit={handleAddVocabulary}
-          className='space-y-4 bg-green-heaven bg-opacity-10 p4 md:p-6 mt-8 rounded-3xl drop-shadow-2xl'
+          className='space-y-4 bg-green-heaven/30 p4 md:p-6 mt-8 rounded-3xl drop-shadow-2xl'
         >
           <div className='form-control'>
             <label
@@ -139,7 +140,7 @@ const AddVocabularies = () => {
             <button
               disabled={loading}
               type='submit'
-              className='w-full bg-green-heaven text-white py-3 px-4 rounded-md hover:bg-green-700 transition-colors disabled:opacity-50'
+              className='w-full bg-green-heaven text-white py-3 px-4 rounded-md hover:bg-green-800 transition-colors disabled:opacity-50'
             >
               {loading ? (
                 <ImSpinner9 className='animate-spin m-auto text-deep-ocean' />
