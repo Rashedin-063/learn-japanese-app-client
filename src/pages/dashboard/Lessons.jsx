@@ -7,7 +7,6 @@ import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
 import UpdateLessonModal from "../../components/modals/UpdateLessonModal";
-import PageTitle from "../../components/PageTitle";
 
 const Lessons = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,17 +52,16 @@ const [lessons, refetch, isLoading, isError, error] =
 
 
   if (isLoading) return <p>Loading lessons...</p>;
-  if (isError) return <p>Error fetching lessons.</p>;
+  if (isError) return <p>Error: {error}</p>;
 
   return (
-    <div>
+    <div className="min-h-screen flex justify-center items-center">
       <Helmet>
         <title>Learn Japanese || Admin - Lessons</title>
       </Helmet>
-    <PageTitle title='Manage Lessons'/>
       <table className='table table-sm xl:table-md w-full border border-green-heaven lg:w-3/4 mx-auto mt-8'>
         <thead>
-          <tr className=' border-b-2 border-green-heaven text-base text-slate-800 text-center'>
+          <tr className=' border-b-2 border-green-heaven text-base lg:text-lg text-slate-800 text-center'>
             <th className='border-2 border-green-heaven'>Lesson Name</th>
             <th className='border-2 border-green-heaven'>Lesson No.</th>
             <th className='border-2 border-green-heaven'>Vocabularies</th>
@@ -77,7 +75,7 @@ const [lessons, refetch, isLoading, isError, error] =
               className='border-b border-green-heaven text-center'
               key={lesson._id}
             >
-              <td className='border border-green-heaven text-sm font-semibold'>
+              <td className='border border-green-heaven text-sm lg:text-base font-semibold'>
                 {lesson?.lessonName}
               </td>
               <td className='border border-green-heaven text-sm font-semibold'>

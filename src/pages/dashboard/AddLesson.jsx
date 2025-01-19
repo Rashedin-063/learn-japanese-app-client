@@ -1,7 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import PageTitle from '../../components/PageTitle';
 import { useState } from 'react';
-import { axiosApi } from '../../api/axiosApi';
 import { useOutletContext } from 'react-router-dom';
 import { ImSpinner9 } from 'react-icons/im';
 import { postLessonInfo } from '../../api/userApi';

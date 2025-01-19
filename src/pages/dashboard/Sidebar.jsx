@@ -90,31 +90,12 @@ const Sidebar = ({ isActive, handleToggle }) => {
           <div className='flex flex-col justify-between items-center flex-1 mt-6 '>
             {/*  Menu Items */}
             <nav>
-              {/* Lessons */}
-              <NavLink
-                to='/dashboard'
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-3.5 gap-3 py-2 my-3   hover:text-white    w-[200px] mx-auto ${
-                    isActive
-                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
-                      : ''
-                  }`
-                }
-              >
-                <MdOutlineArticle size={24} />
-
-                <span className=' font-medium'>Lessons</span>
-              </NavLink>
-
               {/* Add Lessons */}
               <NavLink
                 to='add-lessons'
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
-                    isActive
-                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
-                      : ''
+                    isActive ? '   bg-amber-glow rounded-lg  text-white' : ''
                   }`
                 }
               >
@@ -123,14 +104,27 @@ const Sidebar = ({ isActive, handleToggle }) => {
                 <span className='mx-4 font-medium'>Add Lessons</span>
               </NavLink>
 
+              {/* Manage Lessons */}
+              <NavLink
+                to='/dashboard'
+                end
+                className={({ isActive }) =>
+                  `flex items-center px-3.5 gap-3 py-2 my-3   hover:text-white    w-[200px] mx-auto ${
+                    isActive ? '   bg-amber-glow rounded-lg  text-white' : ''
+                  }`
+                }
+              >
+                <MdOutlineArticle size={24} />
+
+                <span className=' font-medium'>Manage Lessons</span>
+              </NavLink>
+
               {/* Add Vocabularies */}
               <NavLink
                 to='add-vocabularies'
                 className={({ isActive }) =>
                   `flex items-center px-3.5 py-2 my-3   hover:text-white    w-[200px] ${
-                    isActive
-                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
-                      : ''
+                    isActive ? '   bg-amber-glow rounded-lg  text-white' : ''
                   }`
                 }
               >
@@ -139,52 +133,32 @@ const Sidebar = ({ isActive, handleToggle }) => {
                 <span className='mx-4 font-medium'>Add Vocabularies</span>
               </NavLink>
 
-              {/* Manage Users */}
-              <NavLink
-                to='manage-users'
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
-                    isActive
-                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
-                      : ''
-                  }`
-                }
-              >
-                <FaUserCog className='w-6 h-6 ' />
-
-                <span className='mx-4 font-medium'>Manage Users</span>
-              </NavLink>
-
-              {/* Lesson Management */}
-              <NavLink
-                to='lesson-management'
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
-                    isActive
-                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
-                      : ''
-                  }`
-                }
-              >
-                <GrDocumentConfig className='w-5 h-5 font-bold ' />
-
-                <span className='mx-4 font-medium'>Lesson Management</span>
-              </NavLink>
-
               {/* Vocabulary Management */}
               <NavLink
                 to='vocabulary-management'
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
-                    isActive
-                      ? '   bg-amber-glow rounded-lg  text-zen-serenity'
-                      : ''
+                    isActive ? '   bg-amber-glow rounded-lg  text-white' : ''
                   }`
                 }
               >
                 <GrDocumentCloud className='w-6 h-6 ' />
 
                 <span className='mx-4 font-medium'>Vocabulary Management</span>
+              </NavLink>
+
+              {/* Manage Users */}
+              <NavLink
+                to='manage-users'
+                className={({ isActive }) =>
+                  `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
+                    isActive ? '   bg-amber-glow rounded-lg  text-white' : ''
+                  }`
+                }
+              >
+                <FaUserCog className='w-6 h-6 ' />
+
+                <span className='mx-4 font-medium'>Manage Users</span>
               </NavLink>
             </nav>
           </div>
@@ -199,9 +173,7 @@ const Sidebar = ({ isActive, handleToggle }) => {
               to='/profile'
               className={({ isActive }) =>
                 `flex items-center px-4 py-2 my-3   hover:text-white    w-[200px] ${
-                  isActive
-                    ? '   bg-amber-glow rounded-lg  text-zen-serenity'
-                    : ''
+                  isActive ? '   bg-amber-glow rounded-lg  text-white' : ''
                 }`
               }
             >

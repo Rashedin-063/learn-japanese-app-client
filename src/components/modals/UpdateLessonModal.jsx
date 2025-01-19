@@ -12,9 +12,11 @@ import { ImSpinner9 } from 'react-icons/im';
 import { toast } from 'react-toastify';
 import PageTitle from '../PageTitle';
 import { axiosApi } from '../../api/axiosApi';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateLessonModal = ({ isOpen, closeModal, lessonData, refetch}) => {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   
   // console.log(lessonData)
   
@@ -36,6 +38,7 @@ const UpdateLessonModal = ({ isOpen, closeModal, lessonData, refetch}) => {
       if (res.data.modifiedCount) {
         toast.success('Lesson Updated Successfully successfully');
         refetch();
+        navigate('/dashboard')
       }
     } catch (error) {
       console.error(error);
