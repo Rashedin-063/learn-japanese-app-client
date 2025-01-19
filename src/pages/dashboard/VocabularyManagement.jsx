@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import useLoadVocabularies from '../../hooks/useLoadVocabularies';
 import { useState } from 'react';
-import PageTitle from '../../components/PageTitle';
 import { FaEdit } from 'react-icons/fa';
 import { MdDeleteForever } from 'react-icons/md';
 import LoadingSpinner from './../../components/LoadingSpinner';
@@ -66,11 +65,10 @@ const VocabularyManagement = () => {
       </Helmet>
 
       <div className='overflow-x-auto -mt-4'>
-        <PageTitle title={'View All Vocabulary'} />
         <table className='table table-sm xl:table-md w-full border border-green-heaven lg:w-3/4 mx-auto mt-8'>
           {/* head */}
           <thead>
-            <tr className=' border-b-2 border-green-heaven text-base text-slate-800 text-center'>
+            <tr className=' border-b-2 border-green-heaven text-base lg:text-lg text-slate-800 text-center'>
               <th className='border-2 border-green-heaven'>#</th>
               <th className='border-2 border-green-heaven'> Japanese Word</th>
               <th className='border-2 border-green-heaven'> Pronunciation</th>
@@ -86,7 +84,7 @@ const VocabularyManagement = () => {
           <tbody>
             {vocabularies?.map((voc, index) => (
               <tr className='border-b border-green-heaven' key={voc._id}>
-                <td className='border border-green-heaven text-sm font-semibold'>
+                <td className='border border-green-heaven text-sm lg:text-base font-semibold'>
                   {index + 1}
                 </td>
 

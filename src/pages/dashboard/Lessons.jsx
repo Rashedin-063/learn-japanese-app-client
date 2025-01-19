@@ -7,6 +7,8 @@ import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
 import UpdateLessonModal from "../../components/modals/UpdateLessonModal";
+import ErrorMessage from "../../components/ErrorMessage";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const Lessons = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,8 +53,8 @@ const [lessons, refetch, isLoading, isError, error] =
    };
 
 
-  if (isLoading) return <p>Loading lessons...</p>;
-  if (isError) return <p>Error: {error}</p>;
+   if (isLoading) return <LoadingSpinner />;
+  if (isError) return <ErrorMessage error={error} />;
 
   return (
     <div className="min-h-screen flex justify-center items-center">
