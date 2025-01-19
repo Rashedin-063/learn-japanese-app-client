@@ -8,7 +8,7 @@ const Courses = () => {
       title: 'Duolingo Japanese',
       platform: 'Duolingo',
       description:
-        'Free, gamified Japanese learning platform perfect for beginners. Features bite-sized lessons, speaking practice, and a structured curriculum.',
+        'Free Japanese learning platform perfect for beginners. Features bite-sized lessons, speaking practice with structured curriculum.',
       price: 'Free (Premium: $6.99/month)',
       url: 'https://www.duolingo.com/course/ja/en/Learn-Japanese',
       features: [
@@ -100,14 +100,11 @@ const Courses = () => {
       <Helmet>
         <title>Learn Japanese || Courses</title>
       </Helmet>
-      <h1 className='text-3xl font-bold text-center  mb-8'>
-        Popular Japanese Learning Platforms
-      </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
         {courses.map((course) => (
           <div
             key={course.id}
-            className='bg-white rounded-lg shadow-lg p-6 flex flex-col h-full'
+            className='bg-zen-serenity rounded-lg shadow-2xl p-6 flex flex-col h-full'
           >
             <div className='mb-4'>
               <h2 className='text-xl font-semibold'>{course.title}</h2>
@@ -132,7 +129,7 @@ const Courses = () => {
               </p>
             </div>
             <button
-              className='mt-4 w-full px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex items-center justify-center gap-2'
+              className='mt-4 w-full px-4 py-2 border border-zen-charcoal rounded-md hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 drop-shadow-lg'
               onClick={() => window.open(course.url, '_blank')}
             >
               Visit Platform
