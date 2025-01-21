@@ -48,7 +48,7 @@ const Home = () => {
 
       {/* chat with ai */}
       <div className='min-w-xl border border-green-heaven mt-8 p-8 rounded-lg text-center'>
-        <h3>Chat with AI to Learn Japanese</h3>
+        <h3 className="font-semibold">Chat with AI to Learn Japanese</h3>
         <div className='overflow-y-auto mb-2 p-3 border border-green-heaven/50 my-4'>
           {messages.map((msg, index) => (
             <div
