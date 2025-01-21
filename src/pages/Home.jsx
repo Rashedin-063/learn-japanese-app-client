@@ -47,15 +47,14 @@ const Home = () => {
       </div>
 
       {/* chat with ai */}
-      <div className="min-w-xl border border-green-heaven mt-8 p-8 rounded-lg text-center">
+      <div className='min-w-xl border border-green-heaven mt-8 p-8 rounded-lg text-center'>
         <h3>Chat with AI to Learn Japanese</h3>
-        <div className="overflow-y-auto mb-2 p-3 border border-green-heaven/50 my-4"
-        >
+        <div className='overflow-y-auto mb-2 p-3 border border-green-heaven/50 my-4'>
           {messages.map((msg, index) => (
             <div
               key={index}
+              className="my-1"
               style={{
-                margin: '5px 0',
                 textAlign: msg.role === 'user' ? 'right' : 'left',
               }}
             >
@@ -64,22 +63,17 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px' }}>
+        <form onSubmit={handleSubmit} className='flex gap-3'>
           <input
             type='text'
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder='Ask me...'
-            style={{
-              flex: 1,
-              padding: '10px',
-              border: '1px solid #ddd',
-              borderRadius: '4px',
-            }}
+            className='flex-1 p-3 border border-[#ddd] rounded-md'
           />
           <button
             type='submit'
-            className="py-2 px-5 bg-green-heaven rounded-lg text-zen-serenity hover:bg-green-800"
+            className='py-2 px-5 bg-green-heaven rounded-lg text-zen-serenity hover:bg-green-800'
           >
             Submit
           </button>
