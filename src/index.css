@@ -12,11 +12,11 @@ color : #E0DBD6;
 }
 
    input, textarea, select{
-    background-color: #dcf8e5;
+    background-color: #1D232A;
   }
  
-  input:focus, 
-  textarea:focus, 
+  input, 
+  textarea, 
   select:focus {
    background-color: #bef1ce;;
   }

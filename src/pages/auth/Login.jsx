@@ -96,7 +96,8 @@ const Login = () => {
             <button
               type='submit'
               disabled={loading}
-              className='btn text-gray-200 text-sm bg-green-heaven'
+              className='btn bg-green-800 text-gray-200
+              hover:bg-green-heaven'
             >
               {loading ? (
                 <ImSpinner9 className='animate-spin m-auto text-deep-ocean' />

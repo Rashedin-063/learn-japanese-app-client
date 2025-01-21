@@ -105,16 +105,16 @@ toast.success('Registration  Successful')
               type='text'
               {...register('name')} // Ensure this matches the Zod schema
               placeholder='Name'
-              className='input input-bordered'
+              className='input input-bordered mb-2 text-gray-200 placeholder:text-gray-400 text-sm focus:bg-slate-700'
             />
             {errors.name && (
               <p className='text-red-500 mt-2'>{errors.name.message}</p>
             )}
           </div>
-          <div className='flex justify-between items-center py-1 bg-white rounded-md'>
+          <div className='flex justify-between items-center py-1 bg-[#1D232A] rounded-md text-gray-200 placeholder:text-gray-400 text-sm focus:bg-slate-700'>
             <label
               htmlFor='photo'
-              className='block mb-2 pt-2 pl-[14px] min-w-40 font-semibold'
+              className='block mb-2 pt-2 pl-[14px] min-w-40'
             >
               Select Image:
             </label>
@@ -124,6 +124,7 @@ toast.success('Registration  Successful')
               id='photo'
               accept='image/*'
               onChange={handleImageChange}
+              className='font-normal text-sm py-2 bg-transparent'
             />
             {errors.photo && (
               <p className='text-red-500 mt-2'>{errors.photo.message}</p>
@@ -134,7 +135,7 @@ toast.success('Registration  Successful')
               type='email'
               {...register('email')} // Ensure this matches the Zod schema
               placeholder='Email'
-              className='input input-bordered'
+              className='input input-bordered my-2 text-gray-200 placeholder:text-gray-400 text-sm focus:bg-slate-700'
             />
             {errors.email && (
               <p className='text-red-500 mt-2'>{errors.email.message}</p>
@@ -146,11 +147,11 @@ toast.success('Registration  Successful')
               {...register('password')} // Ensure this matches the Zod schema
               placeholder='Password'
               autoComplete='new-password'
-              className='input input-bordered'
+              className='input input-bordered mb-4 text-gray-200 placeholder:text-gray-400 text-sm focus:bg-slate-700'
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
-              className='absolute top-4 right-8 cursor-pointer'
+              className='absolute top-4 right-8 cursor-pointer text-gray-200 text-lg'
             >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
@@ -162,8 +163,8 @@ toast.success('Registration  Successful')
             <button
               disabled={loading}
               type='submit'
-              className='btn bg-green-heaven text-zen-charcoal
-              hover:bg-green-600 mt-2'
+              className='btn bg-green-800 text-gray-200
+              hover:bg-green-heaven'
             >
               {loading ? (
                 <ImSpinner9 className='animate-spin m-auto text-deep-ocean' />
