@@ -8,7 +8,7 @@ const LoginRegisterTitle = ({ title }) => {
       <Link to='/lessons'>
         <img className='w-[70%] lg:w-[20%] mx-auto' src={logo} alt='' />
       </Link>
-      <h2 className='text-4xl text-center tracking-wide mb-12 font-yujiMai  font-semibold'>
+      <h2 className='text-4xl text-center tracking-wide mb-12  font-semibold'>
         {title}
       </h2>
     </div>
