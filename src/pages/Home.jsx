@@ -39,21 +39,12 @@ const Home = () => {
   
   const handleSubmit = async (event) => { 
     event.preventDefault();
-    event.preventDefault();
-    try {
-      const responseData = await axios.post(
-        'https://chat.blacksand.cloud/api/v1/messages',
-        { input: 'Write a short sonnet about Paris in the fall' },
-        {
-          headers: {
-            Authorization: `Bearer bkey-i_rashedin000000000000-c9cdb878`,
-          },
-        }
-      );
-      setResponse(responseData.data);
-    } catch (error) {
-      console.error(error);
-    }
+   try {
+     const responseData = await axiosApi.post('/api/chat', { input });
+     setResponse(responseData.data);
+   } catch (error) {
+     console.error('Error:', error);
+   }
   }
 
   return (
@@ -85,10 +76,21 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <form onSubmit={handleSubmit}>
+        <div>
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder='Enter your prompt'
+          />
+          <button onClick={handleSubmit}>Send</button>
+          <div>
+            <strong>Response:</strong> {response}
+          </div>
+        </div>
+        {/* <form onSubmit={handleSubmit}>
           <textarea value={response} readOnly />
           <button type='submit'>Generate Response</button>
-        </form>
+        </form> */}
         {/* <form onSubmit={handleSubmit} className='flex gap-3'>
           <input
             type='text'
