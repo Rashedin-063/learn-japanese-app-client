@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { axiosApi } from "../api/axiosApi";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { chat } from "blacksand";
 
 const Home = () => {
  const [messages, setMessages] = useState([]);
@@ -39,12 +40,17 @@ const Home = () => {
   
   const handleSubmit = async (event) => { 
     event.preventDefault();
-   try {
-     const responseData = await axiosApi.post('/api/chat', { input });
-     setResponse(responseData.data);
-   } catch (error) {
-     console.error('Error:', error);
-   }
+   
+    let { reply } = await chat({
+      apiKey: 'bkey-i_rashedin000000000000-c9cdb878',
+      sessionId: window.crypto.randomUUID(),
+      input: input
+    })
+
+    setResponse(reply);
+    setInput('');
+    setMessages(reply);
+    
   }
 
   return (
@@ -62,7 +68,7 @@ const Home = () => {
       {/* chat with ai */}
       <div className='min-w-xl border border-green-heaven mt-8 p-8 rounded-lg text-center'>
         <h3 className='font-semibold'>Chat with AI to Learn Japanese</h3>
-        <div className='overflow-y-auto mb-2 p-3 border border-green-heaven/50 my-4'>
+        {/* <div className='overflow-y-auto mb-2 p-3 border border-green-heaven/50 my-4'>
           {messages.map((msg, index) => (
             <div
               key={index}
@@ -75,7 +81,7 @@ const Home = () => {
               {msg.content}
             </div>
           ))}
-        </div>
+        </div> */}
         <div>
           <textarea
             value={input}
